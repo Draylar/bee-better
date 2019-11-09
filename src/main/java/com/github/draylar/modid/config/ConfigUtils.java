@@ -1,9 +1,9 @@
 package com.github.draylar.modid.config;
 
 import com.github.draylar.modid.ExampleMod;
-import me.sargunvohra.mcmods.autoconfig1.AutoConfig;
-import me.sargunvohra.mcmods.autoconfig1.ConfigManager;
-import me.sargunvohra.mcmods.autoconfig1.serializer.ConfigSerializer;
+import me.sargunvohra.mcmods.autoconfig1u.AutoConfig;
+import me.sargunvohra.mcmods.autoconfig1u.ConfigManager;
+import me.sargunvohra.mcmods.autoconfig1u.serializer.ConfigSerializer;
 
 public class ConfigUtils {
 

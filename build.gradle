@@ -13,8 +13,7 @@ minecraft {
 
 repositories {
 	maven { url = "https://maven.fabricmc.net/" }
-	maven { url = "https://minecraft.curseforge.com/api/maven" }
-	maven { url = 'http://maven.sargunv.s3-website-us-west-2.amazonaws.com/' }
+	maven { url "https://dl.bintray.com/shedaniel/autoconfig1u/" }
 	maven { url = "https://jitpack.io" }
 }
 
@@ -27,17 +26,14 @@ dependencies {
 	modCompile "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
 	include "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
 
-	modCompile "me.sargunvohra.mcmods:auto-config:${project.auto_config_version}"
-	include "me.sargunvohra.mcmods:auto-config:${project.auto_config_version}"
-
-	modCompile "com.github.Draylar:world-traveler:${world_trader_version}"
-	include "com.github.Draylar:world-traveler:${world_trader_version}"
+	modCompile "me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}"
+	include "me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}"
 
 	modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
 }
 
-idea{
-	module{
+idea {
+	module {
 		inheritOutputDirs = false
 		outputDir = compileJava.destinationDir
 		testOutputDir = compileTestJava.destinationDir
