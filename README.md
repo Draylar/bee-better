@@ -10,4 +10,4 @@ Now you can have a pool party with your buzzing friends!
 
 ![Bee Pool Party](https://i.imgur.com/efyi4wZ.png)
 
-Liquid Honey was built for Fabric 19w46b under the MIT license. 
+Liquid Honey was built for Fabric 19w46b under the MIT license. [CurseForge page can be found here.](https://www.curseforge.com/minecraft/mc-mods/liquid-honey)
