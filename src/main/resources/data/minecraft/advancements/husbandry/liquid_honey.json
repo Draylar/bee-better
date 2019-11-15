@@ -1,0 +1,29 @@
+{
+    "parent": "minecraft:husbandry/safely_harvest_honey",
+    "display": {
+        "title": {
+            "text": "Gooey Goodness",
+            "color": "gold",
+            "bold": false
+        },
+        "description": {
+            "text": "Take a swim in flowing honey."
+        },
+        "icon": {
+            "item": "minecraft:honeycomb_block"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/stone.png"
+    },
+    "criteria": {
+        "liquid_honey_swim": {
+            "trigger": "minecraft:enter_block",
+            "conditions": {
+                "block": "liquidhoney:honey"
+            }
+        }
+    }
+}

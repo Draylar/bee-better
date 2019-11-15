@@ -1,40 +1,37 @@
 
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "liquidhoney",
   "version": "${version}",
 
-  "name": "Fabric Example Mod",
-  "description": "Draylar's Fabric Example Mod!",
+  "name": "Liquid Honey",
+  "description": "Adds in a liquid form of honey which can be moved with a bucket.",
   "authors": [
     "Draylar"
   ],
   "contact": {
-    "homepage": "https://github.com/Draylar",
-    "sources": "https://github.com/Draylar/fabric-example-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/liquid-honey",
+    "sources": "https://github.com/Draylar/liquid-honey"
   },
 
-  "license": "GPLv3",
-  "icon": "assets/modid/icon.png",
+  "license": "MIT",
+  "icon": "assets/liquidhoney/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.draylar.modid.ExampleMod"
+      "com.github.draylar.liquidhoney.LiquidHoney"
     ],
     "client": [
-      "com.github.draylar.modid.ExampleModClient"
+      "com.github.draylar.liquidhoney.LiquidHoneyClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "liquidhoney.mixins.json"
   ],
 
-  "requires": {
+  "depends": {
     "fabricloader": ">=0.4.0",
     "fabric": "*"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }

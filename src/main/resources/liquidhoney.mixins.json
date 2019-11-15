@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.github.draylar.liquidhoney.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
