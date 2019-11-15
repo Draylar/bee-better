@@ -1,18 +1,13 @@
-# Fabric Example Mod
+# Liquid Honey
 
-Draylar's fork of the fabric-example-mod. Changes package structure to my usual one.
+This golden goodness always tasted great, and now you can swim in it too! Liquid Honey is a simple mod that adds in a fluid block for honey, as well as a bucket to hold it with. 
 
-## Setup
+The crafting recipe is simple, and you can put the items in any order:
 
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
+![Honey Bucket Recipe](https://i.imgur.com/CRmr220.png)
 
-```
-./gradlew idea
-```
+Now you can have a pool party with your buzzing friends!
 
-## License
+![Bee Pool Party](https://i.imgur.com/efyi4wZ.png)
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Liquid Honey was built for Fabric 19w46b under the MIT license. [CurseForge page can be found here.](https://www.curseforge.com/minecraft/mc-mods/liquid-honey)
