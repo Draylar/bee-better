@@ -1,6 +1,6 @@
-package com.github.draylar.liquidhoney.honey;
+package com.github.draylar.betterbees.honey;
 
-import com.github.draylar.liquidhoney.registry.Fluids;
+import com.github.draylar.betterbees.registry.Fluids;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BucketItem;
 import net.minecraft.sound.SoundCategory;

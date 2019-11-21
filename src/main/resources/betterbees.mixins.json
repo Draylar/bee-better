@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "com.github.draylar.liquidhoney.mixin",
+  "package": "com.github.draylar.betterbees.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "EntityMixin"

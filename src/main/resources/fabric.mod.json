@@ -1,33 +1,33 @@
 
 {
   "schemaVersion": 1,
-  "id": "liquidhoney",
+  "id": "betterbees",
   "version": "${version}",
 
-  "name": "Liquid Honey",
-  "description": "Adds in a liquid form of honey which can be moved with a bucket.",
+  "name": "Better Bees",
+  "description": "Simple mod that focuses on improving bees!",
   "authors": [
     "Draylar"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/liquid-honey",
-    "sources": "https://github.com/Draylar/liquid-honey"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/better-bees",
+    "sources": "https://github.com/Draylar/better-bees"
   },
 
   "license": "MIT",
-  "icon": "assets/liquidhoney/icon.png",
+  "icon": "assets/betterbees/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.draylar.liquidhoney.LiquidHoney"
+      "com.github.draylar.betterbees.BetterBees"
     ],
     "client": [
-      "com.github.draylar.liquidhoney.LiquidHoneyClient"
+      "com.github.draylar.betterbees.BetterBeesClient"
     ]
   },
   "mixins": [
-    "liquidhoney.mixins.json"
+    "betterbees.mixins.json"
   ],
 
   "depends": {

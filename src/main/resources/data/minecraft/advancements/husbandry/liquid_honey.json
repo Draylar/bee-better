@@ -22,7 +22,7 @@
         "liquid_honey_swim": {
             "trigger": "minecraft:enter_block",
             "conditions": {
-                "block": "liquidhoney:honey"
+                "block": "betterbees:honey"
             }
         }
     }

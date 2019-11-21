@@ -1,6 +1,6 @@
-package com.github.draylar.liquidhoney.honey;
+package com.github.draylar.betterbees.honey;
 
-import com.github.draylar.liquidhoney.registry.Fluids;
+import com.github.draylar.betterbees.registry.Fluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.Entity;

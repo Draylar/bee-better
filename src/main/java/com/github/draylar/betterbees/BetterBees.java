@@ -1,17 +1,17 @@
-package com.github.draylar.liquidhoney;
+package com.github.draylar.betterbees;
 
-import com.github.draylar.liquidhoney.registry.Blocks;
-import com.github.draylar.liquidhoney.registry.Fluids;
-import com.github.draylar.liquidhoney.registry.Items;
-import com.github.draylar.liquidhoney.registry.Tags;
+import com.github.draylar.betterbees.registry.Blocks;
+import com.github.draylar.betterbees.registry.Fluids;
+import com.github.draylar.betterbees.registry.Items;
+import com.github.draylar.betterbees.registry.Tags;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class LiquidHoney implements ModInitializer
+public class BetterBees implements ModInitializer
 {
-	public static final String MODID = "liquidhoney";
+	public static final String MODID = "betterbees";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
 
 	@Override

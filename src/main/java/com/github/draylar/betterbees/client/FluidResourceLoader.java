@@ -1,7 +1,7 @@
-package com.github.draylar.liquidhoney.client;
+package com.github.draylar.betterbees.client;
 
-import com.github.draylar.liquidhoney.LiquidHoney;
-import com.github.draylar.liquidhoney.registry.Fluids;
+import com.github.draylar.betterbees.BetterBees;
+import com.github.draylar.betterbees.registry.Fluids;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.resource.ResourceReloadListenerKeys;
@@ -18,7 +18,7 @@ public class FluidResourceLoader implements SimpleSynchronousResourceReloadListe
 
     @Override
     public Identifier getFabricId() {
-        return LiquidHoney.id("fluid_resource_loader");
+        return BetterBees.id("fluid_resource_loader");
     }
 
     @Override
@@ -30,8 +30,8 @@ public class FluidResourceLoader implements SimpleSynchronousResourceReloadListe
     public void apply(ResourceManager resourceManager) {
         FluidRenderHandler honeyRenderHandler = (blockRenderView, blockPos, fluidState) ->
                 new Sprite[] {
-                        MinecraftClient.getInstance().getSpriteAtlas().getSprite(LiquidHoney.id("block/honey_still")),
-                        MinecraftClient.getInstance().getSpriteAtlas().getSprite(LiquidHoney.id("block/honey_flow"))
+                        MinecraftClient.getInstance().getSpriteAtlas().getSprite(BetterBees.id("block/honey_still")),
+                        MinecraftClient.getInstance().getSpriteAtlas().getSprite(BetterBees.id("block/honey_flow"))
                 };
 
         FluidRenderHandlerRegistry.INSTANCE.register(Fluids.HONEY, honeyRenderHandler);
