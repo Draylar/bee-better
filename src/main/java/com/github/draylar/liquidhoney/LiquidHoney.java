@@ -3,6 +3,7 @@ package com.github.draylar.liquidhoney;
 import com.github.draylar.liquidhoney.registry.Blocks;
 import com.github.draylar.liquidhoney.registry.Fluids;
 import com.github.draylar.liquidhoney.registry.Items;
+import com.github.draylar.liquidhoney.registry.Tags;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -19,6 +20,7 @@ public class LiquidHoney implements ModInitializer
 		Blocks.init();
 		Items.init();
 		Fluids.init();
+		Tags.init();
 	}
 
 	public static Identifier id(String name) {
