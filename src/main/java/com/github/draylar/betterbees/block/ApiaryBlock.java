@@ -58,7 +58,7 @@ public class ApiaryBlock extends Block implements BlockEntityProvider {
 
     public ApiaryBlock(Block.Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateFactory.getDefaultState().with(HONEY_LEVEL, 0).with(FACING, Direction.NORTH));
+        this.setDefaultState(this.getStateManager().getDefaultState().with(HONEY_LEVEL, 0).with(FACING, Direction.NORTH));
     }
 
     @Override

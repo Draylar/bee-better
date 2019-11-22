@@ -45,9 +45,9 @@ public abstract class BeeMoveToTargetGoal extends NotAngryGoal {
         if (blockPos != null && (entityNavigation.getCurrentPath() == null || entityNavigation.getCurrentPath().reachesTarget())) {
             if (entityNavigation.isIdle()) {
                 Vec3d vec3d = new Vec3d(blockPos);
-                Vec3d vec3d2 = TargetFinder.method_23736(this.getBee(), 8, 6, vec3d, 0.3141592741012573D, false);
+                Vec3d vec3d2 = TargetFinder.findTargetTowards(this.getBee(), 8, 6, vec3d, 0.3141592741012573D);
                 if (vec3d2 == null) {
-                    vec3d2 = TargetFinder.findTargetTowards(this.getBee(), 3, 3, vec3d, false);
+                    vec3d2 = TargetFinder.method_23735(this.getBee(), 3, 3, vec3d);
                 }
 
                 if (vec3d2 == null) {

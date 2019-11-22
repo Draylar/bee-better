@@ -1,8 +1,13 @@
 package com.github.draylar.betterbees.item;
 
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.world.Difficulty;
 
 public class BeeStingerItem extends SwordItem {
 
@@ -38,5 +43,24 @@ public class BeeStingerItem extends SwordItem {
                 return Ingredient.EMPTY;
             }
         }, 0, -2.0f, settings);
+    }
+    
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        System.out.println("max "+stack.getMaxDamage()+" curr "+stack.getDamage()+" minus "+(stack.getMaxDamage() - stack.getDamage()));
+        if(target.getRandom().nextInt(stack.getMaxDamage() - stack.getDamage()) == 0) {
+            int i = 0;
+            if (target.world.getDifficulty() == Difficulty.NORMAL) {
+                i = 10;
+            } else if (target.world.getDifficulty() == Difficulty.HARD) {
+                i = 18;
+            }
+    
+            if (i > 0) {
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, i * 20, 0));
+            }
+        }
+        
+        return super.postHit(stack, target, attacker);
     }
 }

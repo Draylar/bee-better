@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "candle_dye",
+  "ingredients": [
+    {
+      "item": "minecraft:orange_dye"
+    },
+    {
+      "item": "betterbees:candle"
+    }
+  ],
+  "result": {
+    "item": "betterbees:orange_candle"
+  }
+}

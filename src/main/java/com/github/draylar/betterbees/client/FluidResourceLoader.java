@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.resource.ResourceReloadListenerKeys;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.Sprite;
+import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 
@@ -30,8 +31,8 @@ public class FluidResourceLoader implements SimpleSynchronousResourceReloadListe
     public void apply(ResourceManager resourceManager) {
         FluidRenderHandler honeyRenderHandler = (blockRenderView, blockPos, fluidState) ->
                 new Sprite[] {
-                        MinecraftClient.getInstance().getSpriteAtlas().getSprite(BetterBees.id("block/honey_still")),
-                        MinecraftClient.getInstance().getSpriteAtlas().getSprite(BetterBees.id("block/honey_flow"))
+                        MinecraftClient.getInstance().getSpriteAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEX).apply(BetterBees.id("block/honey_still")),
+                        MinecraftClient.getInstance().getSpriteAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEX).apply(BetterBees.id("block/honey_flow"))
                 };
 
         FluidRenderHandlerRegistry.INSTANCE.register(BeeFluids.HONEY, honeyRenderHandler);

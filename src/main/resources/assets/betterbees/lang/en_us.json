@@ -6,6 +6,23 @@
 
   "block.betterbees.beeswax": "Beeswax",
   "block.betterbees.apiary": "Apiary",
+  "block.betterbees.candle": "Candle",
+  "block.betterbees.white_candle": "White Candle",
+  "block.betterbees.orange_candle": "Orange Candle",
+  "block.betterbees.magenta_candle": "Magenta Candle",
+  "block.betterbees.light_blue_candle": "Light Blue Candle",
+  "block.betterbees.yellow_candle": "Yellow Candle",
+  "block.betterbees.lime_candle": "Lime Candle",
+  "block.betterbees.pink_candle": "Pink Candle",
+  "block.betterbees.gray_candle": "Gray Candle",
+  "block.betterbees.light_gray_candle": "Light Gray Candle",
+  "block.betterbees.cyan_candle": "Cyan Candle",
+  "block.betterbees.purple_candle": "Purple Candle",
+  "block.betterbees.blue_candle": "Blue Candle",
+  "block.betterbees.brown_candle": "Brown Candle",
+  "block.betterbees.green_candle": "Green Candle",
+  "block.betterbees.red_candle": "Red Candle",
+  "block.betterbees.black_candle": "Black Candle",
 
   "itemGroup.betterbees.group": "Better Bees"
 }
