@@ -1,8 +1,8 @@
 package com.github.draylar.betterbees;
 
 import com.github.draylar.betterbees.client.FluidResourceLoader;
-import com.github.draylar.betterbees.registry.Blocks;
-import com.github.draylar.betterbees.registry.Fluids;
+import com.github.draylar.betterbees.registry.BeeBlocks;
+import com.github.draylar.betterbees.registry.BeeFluids;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
@@ -17,9 +17,9 @@ public class BetterBeesClient implements ClientModInitializer {
     public void onInitializeClient() {
         ResourceManagerHelper.get(ResourceType.CLIENT_RESOURCES).registerReloadListener(new FluidResourceLoader());
 
-        BlockRenderLayerMap.INSTANCE.putBlock(Blocks.HONEY_FLUID, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putFluid(Fluids.HONEY, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putFluid(Fluids.FLOWING_HONEY, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(BeeBlocks.HONEY_FLUID, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putFluid(BeeFluids.HONEY, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putFluid(BeeFluids.FLOWING_HONEY, RenderLayer.getTranslucent());
 
         ClientSpriteRegistryCallback.event(SpriteAtlasTexture.BLOCK_ATLAS_TEX).register((texture, registry) -> {
             registry.register(BetterBees.id("block/honey_still"));

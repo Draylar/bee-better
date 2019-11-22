@@ -1,6 +1,6 @@
 package com.github.draylar.betterbees.honey;
 
-import com.github.draylar.betterbees.registry.Fluids;
+import com.github.draylar.betterbees.registry.BeeFluids;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BucketItem;
 import net.minecraft.sound.SoundCategory;
@@ -12,7 +12,7 @@ import net.minecraft.world.IWorld;
 public class HoneyBucketItem extends BucketItem {
 
     public HoneyBucketItem(Settings settings) {
-        super(Fluids.HONEY, settings);
+        super(BeeFluids.HONEY, settings);
     }
 
     @Override

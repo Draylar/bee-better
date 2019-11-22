@@ -1,6 +1,6 @@
 package com.github.draylar.betterbees.honey;
 
-import com.github.draylar.betterbees.registry.Fluids;
+import com.github.draylar.betterbees.registry.BeeFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.entity.Entity;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 public class HoneyFluidBlock extends FluidBlock {
 
     public HoneyFluidBlock(Settings settings) {
-        super(Fluids.HONEY, settings);
+        super(BeeFluids.HONEY, settings);
     }
 
     @Override

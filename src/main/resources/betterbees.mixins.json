@@ -3,7 +3,11 @@
   "package": "com.github.draylar.betterbees.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "EntityMixin"
+    "EntityMixin",
+    "BeeAccessor",
+    "BeeMixin",
+    "PointOfInterestTypeAccessor",
+    "BeeHiveMixin"
   ],
   "injectors": {
     "defaultRequire": 1

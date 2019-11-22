@@ -6,7 +6,7 @@ import net.minecraft.fluid.BaseFluid;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.registry.Registry;
 
-public class Fluids {
+public class BeeFluids {
 
     public static final BaseFluid HONEY = (BaseFluid) register("honey", new HoneyFluid.Still());
     public static final BaseFluid FLOWING_HONEY = (BaseFluid) register("flowing_honey", new HoneyFluid.Flowing());
@@ -19,7 +19,7 @@ public class Fluids {
         // NO-OP
     }
 
-    private Fluids() {
+    private BeeFluids() {
         // NO-OP
     }
 }

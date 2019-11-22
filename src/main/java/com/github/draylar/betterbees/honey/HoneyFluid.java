@@ -1,8 +1,8 @@
 package com.github.draylar.betterbees.honey;
 
-import com.github.draylar.betterbees.registry.Blocks;
-import com.github.draylar.betterbees.registry.Fluids;
-import com.github.draylar.betterbees.registry.Items;
+import com.github.draylar.betterbees.registry.BeeBlocks;
+import com.github.draylar.betterbees.registry.BeeFluids;
+import com.github.draylar.betterbees.registry.BeeItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
@@ -25,17 +25,17 @@ public abstract class HoneyFluid extends BaseFluid {
 
     @Override
     public Fluid getFlowing() {
-        return Fluids.FLOWING_HONEY;
+        return BeeFluids.FLOWING_HONEY;
     }
 
     @Override
     public Fluid getStill() {
-        return Fluids.HONEY;
+        return BeeFluids.HONEY;
     }
 
     @Override
     public Item getBucketItem() {
-        return Items.HONEY_BUCKET;
+        return BeeItems.HONEY_BUCKET;
     }
 
     @Override
@@ -77,7 +77,7 @@ public abstract class HoneyFluid extends BaseFluid {
 
     @Override
     protected BlockState toBlockState(FluidState fluidState) {
-        return Blocks.HONEY_FLUID.getDefaultState().with(FluidBlock.LEVEL, method_15741(fluidState));
+        return BeeBlocks.HONEY_FLUID.getDefaultState().with(FluidBlock.LEVEL, method_15741(fluidState));
     }
 
     @Override
@@ -89,7 +89,7 @@ public abstract class HoneyFluid extends BaseFluid {
 
     @Override
     public boolean matchesType(Fluid fluid) {
-        return fluid == Fluids.FLOWING_HONEY || fluid == Fluids.HONEY;
+        return fluid == BeeFluids.FLOWING_HONEY || fluid == BeeFluids.HONEY;
     }
 
     public static class Flowing extends HoneyFluid {

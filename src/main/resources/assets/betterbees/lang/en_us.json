@@ -1,3 +1,11 @@
 {
-  "item.betterbees.honey_bucket": "Honey Bucket"
+  "item.betterbees.honey_bucket": "Honey Bucket",
+  "item.betterbees.beeswax_flake": "Beeswax Flake",
+  "item.betterbees.compressed_beeswax": "Compressed Beeswax",
+  "item.betterbees.bee_stinger": "Bee Stinger",
+
+  "block.betterbees.beeswax": "Beeswax",
+  "block.betterbees.apiary": "Apiary",
+
+  "itemGroup.betterbees.group": "Better Bees"
 }

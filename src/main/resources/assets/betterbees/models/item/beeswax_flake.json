@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "betterbees:item/beeswax_flake"
+  }
+}

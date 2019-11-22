@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#c#",
+    "#f#",
+    "#b#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "f": {
+      "item": "minecraft:beehive"
+    },
+    "b": {
+      "item": "betterbees:honey_bucket"
+    },
+    "c":{
+      "item": "betterbees:beeswax"
+    }
+  },
+  "result": {
+    "item": "betterbees:apiary"
+  }
+}

@@ -1,7 +1,7 @@
 package com.github.draylar.betterbees.client;
 
 import com.github.draylar.betterbees.BetterBees;
-import com.github.draylar.betterbees.registry.Fluids;
+import com.github.draylar.betterbees.registry.BeeFluids;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.resource.ResourceReloadListenerKeys;
@@ -34,7 +34,7 @@ public class FluidResourceLoader implements SimpleSynchronousResourceReloadListe
                         MinecraftClient.getInstance().getSpriteAtlas().getSprite(BetterBees.id("block/honey_flow"))
                 };
 
-        FluidRenderHandlerRegistry.INSTANCE.register(Fluids.HONEY, honeyRenderHandler);
-        FluidRenderHandlerRegistry.INSTANCE.register(Fluids.FLOWING_HONEY, honeyRenderHandler);
+        FluidRenderHandlerRegistry.INSTANCE.register(BeeFluids.HONEY, honeyRenderHandler);
+        FluidRenderHandlerRegistry.INSTANCE.register(BeeFluids.FLOWING_HONEY, honeyRenderHandler);
     }
 }

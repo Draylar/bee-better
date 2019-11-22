@@ -1,6 +1,6 @@
 package com.github.draylar.betterbees.mixin;
 
-import com.github.draylar.betterbees.registry.Tags;
+import com.github.draylar.betterbees.registry.BeeTags;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.fluid.Fluid;
@@ -50,7 +50,7 @@ public abstract class EntityMixin {
         Entity entity = (Entity) (Object) this;
         Vec3d velocity = entity.getVelocity();
 
-        if (isInFluidTag(entity, Tags.HONEY)) {
+        if (isInFluidTag(entity, BeeTags.HONEY)) {
             entity.playSound(SoundEvents.BLOCK_HONEY_BLOCK_STEP, 1, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.4F);
 
             float yPos = (float) MathHelper.floor(this.getY());

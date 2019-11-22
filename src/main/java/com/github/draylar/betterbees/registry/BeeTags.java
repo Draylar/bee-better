@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.tag.TagRegistry;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.tag.Tag;
 
-public class Tags {
+public class BeeTags {
 
     public static final Tag<Fluid> HONEY = register("liquid_honey");
 
@@ -17,7 +17,7 @@ public class Tags {
         // NO-OP
     }
 
-    private Tags() {
+    private BeeTags() {
         // NO-OP
     }
 }
