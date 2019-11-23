@@ -23,6 +23,7 @@ public class BetterBees implements ModInitializer {
 		BeeTags.init();
 		BeeEntities.init();
 		BeePOI.init();
+		BeeWorld.init();
 	}
 
 	public static Identifier id(String name) {
