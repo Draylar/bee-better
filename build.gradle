@@ -25,6 +25,19 @@ dependencies {
 	modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
 }
 
+processResources {
+	inputs.property "version", project.version
+
+	from(sourceSets.main.resources.srcDirs) {
+		include "fabric.mod.json"
+		expand "version": project.version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
+		exclude "fabric.mod.json"
+	}
+}
+
 idea {
 	module {
 		inheritOutputDirs = false
