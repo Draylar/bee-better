@@ -15,7 +15,7 @@ public class EnterApiaryGoal extends NotAngryGoal {
     public boolean canBeeStart() {
         IBeeAccessor beeAccessor = (IBeeAccessor) this.getBee();
 
-        if (beeAccessor.canBeeEnterHive() && beeAccessor.getHivePos().isWithinDistance(this.getBee().getPos(), 2.0D)) {
+        if (this.getBee().hasHive() && beeAccessor.canBeeEnterHive() && beeAccessor.getHivePos().isWithinDistance(this.getBee().getPos(), 2.0D)) {
             BlockEntity blockEntity = this.getBee().world.getBlockEntity(beeAccessor.getHivePos());
 
             if (blockEntity instanceof ApiaryBlockEntity) {

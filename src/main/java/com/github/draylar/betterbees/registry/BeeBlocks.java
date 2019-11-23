@@ -16,8 +16,8 @@ import net.minecraft.util.registry.Registry;
 public class BeeBlocks {
 
     public static final Block HONEY_FLUID = register("honey", new HoneyFluidBlock(FabricBlockSettings.of(Material.WATER).noCollision().strength(100.0F, 100f).dropsNothing().build()));
-    public static final Block BEESWAX = register("beeswax", new Block(FabricBlockSettings.of(Material.STONE).build()));
-    public static final Block APIARY = register("apiary", new ApiaryBlock(FabricBlockSettings.of(Material.METAL).build()));
+    public static final Block BEESWAX_BLOCK = register("beeswax", new Block(FabricBlockSettings.copy(Blocks.STONE).build()));
+    public static final Block APIARY = register("apiary", new ApiaryBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).build()));
     public static final Block CANDLE = register("candle", new CandleBlock(FabricBlockSettings.copy(Blocks.TORCH).build()));
     public static final Block WHITE_CANDLE = register("white_candle", new DyedCandleBlock(FabricBlockSettings.copy(Blocks.TORCH).build(), DyeColor.WHITE));
     public static final Block ORANGE_CANDLE = register("orange_candle", new DyedCandleBlock(FabricBlockSettings.copy(Blocks.TORCH).build(), DyeColor.ORANGE));

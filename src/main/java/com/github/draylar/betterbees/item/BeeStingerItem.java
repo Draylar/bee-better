@@ -47,7 +47,6 @@ public class BeeStingerItem extends SwordItem {
     
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        System.out.println("max "+stack.getMaxDamage()+" curr "+stack.getDamage()+" minus "+(stack.getMaxDamage() - stack.getDamage()));
         if(target.getRandom().nextInt(stack.getMaxDamage() - stack.getDamage()) == 0) {
             int i = 0;
             if (target.world.getDifficulty() == Difficulty.NORMAL) {
