@@ -133,14 +133,14 @@ public class ApiaryBlock extends Block implements BlockEntityProvider {
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack heldStack = player.getStackInHand(hand);
         int honeyLevel = state.get(HONEY_LEVEL);
-        boolean shearedHive = false;
+        boolean harvested = false;
 
         if (honeyLevel >= 5) {
             if (heldStack.getItem() == Items.SHEARS) {
                 world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BLOCK_BEEHIVE_SHEAR, SoundCategory.NEUTRAL, 1.0F, 1.0F);
                 dropHoneycomb(world, pos);
                 heldStack.damage(1, player, ((playerx) -> playerx.sendToolBreakStatus(hand)));
-                shearedHive = true;
+                harvested = true;
             }
 
             else if (heldStack.getItem() == Items.GLASS_BOTTLE) {
@@ -154,20 +154,20 @@ public class ApiaryBlock extends Block implements BlockEntityProvider {
                 else if (!player.inventory.insertStack(new ItemStack(Items.HONEY_BOTTLE))) {
                     player.dropItem(new ItemStack(Items.HONEY_BOTTLE), false);
                 }
-
-                shearedHive = true;
+    
+                harvested = true;
             }
         }
 
-        if (shearedHive) {
+        if (harvested) {
             if (!CampfireBlock.method_23895(world, pos, 5)) {
                 if (this.hasBees(world, pos)) {
                     this.angerNearbyBees(world, pos);
                 }
 
-                this.emptyHoney(world, state, pos, player, BeeState.EMERGENCY);
+                this.takeHoneyAndAnger(world, state, pos, player, BeeState.EMERGENCY);
             } else {
-                this.resetHoneyLevel(world, state, pos);
+                this.takeHoney(world, state, pos);
 
                 if (player instanceof ServerPlayerEntity) {
                     Criterions.SAFELY_HARVEST_HONEY.test((ServerPlayerEntity) player, pos, heldStack);
@@ -191,8 +191,8 @@ public class ApiaryBlock extends Block implements BlockEntityProvider {
         }
     }
 
-    private void emptyHoney(World world, BlockState blockState, BlockPos blockPos, PlayerEntity playerEntity, BeeState beeState) {
-        this.resetHoneyLevel(world, blockState, blockPos);
+    private void takeHoneyAndAnger(World world, BlockState blockState, BlockPos blockPos, PlayerEntity playerEntity, BeeState beeState) {
+        takeHoney(world, blockState, blockPos);
         BlockEntity blockEntity = world.getBlockEntity(blockPos);
 
         if (blockEntity instanceof ApiaryBlockEntity) {
@@ -201,17 +201,11 @@ public class ApiaryBlock extends Block implements BlockEntityProvider {
         }
     }
 
-    private void resetHoneyLevel(World world, BlockState blockState, BlockPos blockPos) {
+    private void takeHoney(World world, BlockState blockState, BlockPos blockPos) {
         int honeyLevel = blockState.get(HONEY_LEVEL);
-
-        // between 5 and under 10, decrement once
-        if(honeyLevel >= 5 && honeyLevel != 10) {
+        
+        if(honeyLevel >= 5) {
             world.setBlockState(blockPos, blockState.with(HONEY_LEVEL, honeyLevel - 5), 3);
-        }
-
-        // level is 10, set to 0
-        else if (honeyLevel == 10) {
-            world.setBlockState(blockPos, blockState.with(HONEY_LEVEL, 0), 3);
         }
     }
 

@@ -4,8 +4,11 @@ import com.github.draylar.betterbees.ai.EnterApiaryGoal;
 import com.github.draylar.betterbees.ai.FindApiaryGoal;
 import com.github.draylar.betterbees.ai.MoveToApiaryGoal;
 import com.github.draylar.betterbees.entity.ApiaryBlockEntity;
+import com.github.draylar.betterbees.registry.BeeEntities;
+
 import net.minecraft.block.entity.BeeHiveBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Flutterer;
 import net.minecraft.entity.passive.AnimalEntity;
@@ -13,25 +16,16 @@ import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BeeEntity.class)
 public abstract class BeeMixin extends AnimalEntity implements Flutterer {
-
-    @Shadow private int cannotEnterHiveTicks;
-
-    @Shadow public abstract boolean hasHive();
-
-    @Shadow public abstract boolean hasStung();
-
-    @Shadow private int ticksSincePollination;
-
-    @Shadow public abstract boolean hasNectar();
-
+    
     @Shadow private BlockPos hivePos;
 
     protected BeeMixin(EntityType<? extends AnimalEntity> type, World world) {
@@ -53,25 +47,22 @@ public abstract class BeeMixin extends AnimalEntity implements Flutterer {
         this.goalSelector.add(5, new MoveToApiaryGoal((BeeEntity) (Object) this));
     }
 
-    // TODO: CHANGE TO INJECT
-    @Overwrite
-    private boolean canEnterHive() {
-        if (this.cannotEnterHiveTicks > 0) {
-            return false;
-        } else if (!this.hasHive()) {
-            return false;
-        } else if (this.hasStung()) {
+    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/BeeEntity;method_23984()Z"), method = "canEnterHive")
+    private boolean redirectIsHiveOnFire(BeeEntity beeEntity) {
+        if (this.hivePos == null) {
             return false;
         } else {
-            boolean bl = this.ticksSincePollination > 3600;
-            if (!bl && !this.hasNectar() && !this.world.method_23886() && !this.world.isRaining()) {
-                return false;
-            } else {
-                BlockEntity blockEntity = this.world.getBlockEntity(this.hivePos);
-                boolean isBeeHive = blockEntity instanceof BeeHiveBlockEntity && !((BeeHiveBlockEntity)blockEntity).method_23280();
-                boolean isApiary = blockEntity instanceof ApiaryBlockEntity && !((ApiaryBlockEntity) blockEntity).method_23280();
-                return isBeeHive || isApiary;
-            }
+            BlockEntity blockEntity = this.world.getBlockEntity(this.hivePos);
+            if(blockEntity instanceof BeeHiveBlockEntity) return ((BeeHiveBlockEntity)blockEntity).method_23280();
+            else if(blockEntity instanceof ApiaryBlockEntity) return ((ApiaryBlockEntity)blockEntity).method_23280();
+            else return false;
         }
+    }
+    
+    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BlockEntity;getType()Lnet/minecraft/block/entity/BlockEntityType;"), method = "isHiveValid")
+    private BlockEntityType redirectGetBlockEntityType(BlockEntity blockEntity) {
+        BlockEntityType type = blockEntity.getType();
+        if(type == BeeEntities.APIARY) return BlockEntityType.BEEHIVE;
+        else return type;
     }
 }

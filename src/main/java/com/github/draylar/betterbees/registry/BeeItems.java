@@ -15,7 +15,7 @@ import net.minecraft.util.registry.Registry;
 public class BeeItems {
 
     public static final Item HONEY_BUCKET = register("honey_bucket", new HoneyBucketItem(settings().maxCount(1).recipeRemainder(Items.BUCKET)));
-    public static final Item BEESWAX = register("beeswax", new BlockItem(BeeBlocks.BEESWAX, settings()));
+    public static final Item BEESWAX_BLOCK = register("beeswax", new BlockItem(BeeBlocks.BEESWAX_BLOCK, settings()));
     public static final Item BEESWAX_FLAKE = register("beeswax_flake", new Item(settings()));
     public static final Item COMPRESSED_BEESWAX = register("compressed_beeswax", new Item(settings()));
     public static final Item BEE_STINGER = register("bee_stinger", new BeeStingerItem(settings()));
