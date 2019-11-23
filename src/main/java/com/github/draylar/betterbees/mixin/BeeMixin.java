@@ -42,18 +42,18 @@ public abstract class BeeMixin extends AnimalEntity implements Flutterer {
     private void moveToApiaryGoal(CallbackInfo ci) {
         this.goalSelector.add(5, new MoveToApiaryGoal((BeeEntity) (Object) this));
     }
-
-    @Inject(method = "method_23984", at = @At(value = "RETURN", ordinal = 1), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
-    private void allowApiaryEntering(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
-        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity && ((ApiaryBlockEntity) be).method_23280()) {
+    
+    @Inject(at = @At(value = "RETURN", ordinal = 1), cancellable = true, method = "method_23984", locals = LocalCapture.CAPTURE_FAILHARD)
+    private void isHiveOnFire(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
+        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity && ((ApiaryBlockEntity) be).isHiveOnFire()) {
             info.setReturnValue(true);
         }
     }
     
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BlockEntity;getType()Lnet/minecraft/block/entity/BlockEntityType;"), method = "isHiveValid")
-    private BlockEntityType redirectGetBlockEntityType(BlockEntity blockEntity) {
-        BlockEntityType type = blockEntity.getType();
-        if(type == BeeEntities.APIARY) return BlockEntityType.BEEHIVE;
-        else return type;
+    @Inject(at = @At(value = "RETURN", ordinal = 1), cancellable = true, method = "isHiveValid", locals = LocalCapture.CAPTURE_FAILHARD)
+    private void isHiveValid(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
+        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity) {
+            info.setReturnValue(true);
+        }
     }
 }
