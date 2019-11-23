@@ -22,6 +22,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(BeeEntity.class)
 public abstract class BeeMixin extends AnimalEntity implements Flutterer {
@@ -46,23 +47,18 @@ public abstract class BeeMixin extends AnimalEntity implements Flutterer {
     private void moveToApiaryGoal(CallbackInfo ci) {
         this.goalSelector.add(5, new MoveToApiaryGoal((BeeEntity) (Object) this));
     }
-
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/passive/BeeEntity;method_23984()Z"), method = "canEnterHive")
-    private boolean redirectIsHiveOnFire(BeeEntity beeEntity) {
-        if (this.hivePos == null) {
-            return false;
-        } else {
-            BlockEntity blockEntity = this.world.getBlockEntity(this.hivePos);
-            if(blockEntity instanceof BeeHiveBlockEntity) return ((BeeHiveBlockEntity)blockEntity).method_23280();
-            else if(blockEntity instanceof ApiaryBlockEntity) return ((ApiaryBlockEntity)blockEntity).method_23280();
-            else return false;
+    
+    @Inject(at = @At(value = "RETURN", ordinal = 1), cancellable = true, method = "method_23984", locals = LocalCapture.CAPTURE_FAILHARD)
+    private void isHiveOnFire(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
+        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity && ((ApiaryBlockEntity) be).isHiveOnFire()) {
+            info.setReturnValue(true);
         }
     }
     
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/block/entity/BlockEntity;getType()Lnet/minecraft/block/entity/BlockEntityType;"), method = "isHiveValid")
-    private BlockEntityType redirectGetBlockEntityType(BlockEntity blockEntity) {
-        BlockEntityType type = blockEntity.getType();
-        if(type == BeeEntities.APIARY) return BlockEntityType.BEEHIVE;
-        else return type;
+    @Inject(at = @At(value = "RETURN", ordinal = 1), cancellable = true, method = "isHiveValid", locals = LocalCapture.CAPTURE_FAILHARD)
+    private void isHiveValid(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
+        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity) {
+            info.setReturnValue(true);
+        }
     }
 }

@@ -38,14 +38,14 @@ public class ApiaryBlockEntity extends BlockEntity implements Tickable {
 
     @Override
     public void markDirty() {
-        if (this.method_23280()) {
+        if (this.isHiveOnFire()) {
             this.angerBees(null, this.world.getBlockState(this.getPos()), BeeState.EMERGENCY);
         }
 
         super.markDirty();
     }
 
-    public boolean method_23280() {
+    public boolean isHiveOnFire() {
         if (this.world == null) {
             return false;
         } else {
