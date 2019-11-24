@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import java.util.Random;
 
 public class CandleBlock extends TorchBlock {
-    public static final VoxelShape BOUNDING_SHAPE = Block.createCuboidShape(5.5D, 0.0D, 5.5D, 10.5D, 7.0D, 10.5D);
+    public static final VoxelShape BOUNDING_SHAPE = Block.createCuboidShape(6.5D, 0.0D, 6.5D, 9.5D, 6.0D, 9.5D);
 
     public CandleBlock(Settings settings) {
         super(settings);
