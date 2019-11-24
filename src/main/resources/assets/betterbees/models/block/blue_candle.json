@@ -1,6 +1,7 @@
 {
 	"parent": "betterbees:block/candle",
 	"textures": {
-		"0": "betterbees:block/blue_candle"
+		"0": "betterbees:block/blue_candle",
+		"particle": "betterbees:block/blue_candle"
 	}
 }
