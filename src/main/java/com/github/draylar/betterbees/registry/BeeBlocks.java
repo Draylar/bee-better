@@ -20,7 +20,7 @@ public class BeeBlocks {
     public static final Block BEESWAX_BLOCK = register("beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
     public static final Block APIARY = register("apiary", new ApiaryBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).build()));
     public static final Block CANDLE = register("candle", new CandleBlock(FabricBlockSettings.copy(Blocks.TORCH).sounds(BlockSoundGroup.SNOW).build()));
-    public static final Block WHITE_CANDLE = register("white_candle", new DyedCandleBlock(FabricBlockSettings.copyOf(Block.Settings.copy(CANDLE)).sounds(BlockSoundGroup.SNOW).build(), DyeColor.WHITE));
+    public static final Block WHITE_CANDLE = register("white_candle", new DyedCandleBlock(FabricBlockSettings.copyOf(Block.Settings.copy(CANDLE)).build(), DyeColor.WHITE));
     public static final Block ORANGE_CANDLE = register("orange_candle", new DyedCandleBlock(FabricBlockSettings.copyOf(Block.Settings.copy(CANDLE)).build(), DyeColor.ORANGE));
     public static final Block MAGENTA_CANDLE = register("magenta_candle", new DyedCandleBlock(FabricBlockSettings.copyOf(Block.Settings.copy(CANDLE)).build(), DyeColor.MAGENTA));
     public static final Block LIGHT_BLUE_CANDLE = register("light_blue_candle", new DyedCandleBlock(FabricBlockSettings.copyOf(Block.Settings.copy(CANDLE)).build(), DyeColor.LIGHT_BLUE));
