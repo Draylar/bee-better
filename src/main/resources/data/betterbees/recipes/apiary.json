@@ -10,7 +10,7 @@
       "item": "minecraft:iron_ingot"
     },
     "f": {
-      "item": "minecraft:beehive"
+      "tag": "betterbees:wooden_beehives"
     },
     "b": {
       "item": "betterbees:honey_bucket"

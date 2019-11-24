@@ -10,8 +10,8 @@ public class BeeEntities {
 
     public static final BlockEntityType<ApiaryBlockEntity> APIARY = register("apiary", BlockEntityType.Builder.create(ApiaryBlockEntity::new, BeeBlocks.APIARY).build(null));
 
-    private static <T extends BlockEntity> BlockEntityType<T> register(String apiary, BlockEntityType<T> build) {
-        return Registry.register(Registry.BLOCK_ENTITY, BetterBees.id("apiary"), build);
+    private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType<T> build) {
+        return Registry.register(Registry.BLOCK_ENTITY, BetterBees.id(name), build);
     }
 
     public static void init() {

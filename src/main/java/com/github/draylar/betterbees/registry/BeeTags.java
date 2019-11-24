@@ -13,6 +13,8 @@ public class BeeTags {
     public static final Tag<Fluid> HONEY = registerFluid("liquid_honey");
     public static final Tag<Block> CANDLES = registerBlock("candles");
     public static final Tag<Item> CANDLES_ITEM = registerItem("candles");
+    public static final Tag<Block> WOODEN_BEEHIVES = registerBlock("wooden_beehives");
+    public static final Tag<Item> WOODEN_BEEHIVES_ITEM = registerItem("wooden_beehives");
 
     private static Tag<Fluid> registerFluid(String name) {
         return TagRegistry.fluid(BetterBees.id(name));

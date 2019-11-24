@@ -2,6 +2,7 @@ package com.github.draylar.betterbees.mixin;
 
 import com.github.draylar.betterbees.ai.EnterApiaryGoal;
 import com.github.draylar.betterbees.ai.FindApiaryGoal;
+import com.github.draylar.betterbees.ai.FindModdedHiveGoal;
 import com.github.draylar.betterbees.ai.MoveToApiaryGoal;
 import com.github.draylar.betterbees.entity.ApiaryBlockEntity;
 
@@ -26,8 +27,9 @@ public abstract class BeeMixin extends AnimalEntity implements Flutterer {
     }
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/goal/GoalSelector;add(ILnet/minecraft/entity/ai/goal/Goal;)V", ordinal = 0, shift = At.Shift.AFTER), method = "initGoals")
-    private void addFindApiaryGoal(CallbackInfo ci) {
+    private void addFindHiveGoals(CallbackInfo ci) {
         this.goalSelector.add(0, new FindApiaryGoal(((BeeEntity) (Object) this)));
+        this.goalSelector.add(0, new FindModdedHiveGoal(((BeeEntity) (Object) this)));
     }
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/goal/GoalSelector;add(ILnet/minecraft/entity/ai/goal/Goal;)V", ordinal = 2, shift = At.Shift.AFTER), method = "initGoals")

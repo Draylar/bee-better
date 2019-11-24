@@ -1,12 +1,11 @@
 {
   "replace": false,
   "values": [
-    "betterbees:apiary",
+    "minecraft:beehive",
     "betterbees:spruce_beehive",
     "betterbees:birch_beehive",
     "betterbees:jungle_beehive",
     "betterbees:acacia_beehive",
-    "betterbees:dark_oak_beehive",
-    "betterbees:bee_bricks"
+    "betterbees:dark_oak_beehive"
   ]
 }

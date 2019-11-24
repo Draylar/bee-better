@@ -37,6 +37,12 @@ public class BeeItems {
     public static final Item GREEN_CANDLE = register("green_candle", new BlockItem(BeeBlocks.GREEN_CANDLE, settings()));
     public static final Item RED_CANDLE = register("red_candle", new BlockItem(BeeBlocks.RED_CANDLE, settings()));
     public static final Item BLACK_CANDLE = register("black_candle", new BlockItem(BeeBlocks.BLACK_CANDLE, settings()));
+    public static final Item SPRUCE_BEEHIVE = register("spruce_beehive", new BlockItem(BeeBlocks.SPRUCE_BEEHIVE, settings()));
+    public static final Item BIRCH_BEEHIVE = register("birch_beehive", new BlockItem(BeeBlocks.BIRCH_BEEHIVE, settings()));
+    public static final Item JUNGLE_BEEHIVE = register("jungle_beehive", new BlockItem(BeeBlocks.JUNGLE_BEEHIVE, settings()));
+    public static final Item ACACIA_BEEHIVE = register("acacia_beehive", new BlockItem(BeeBlocks.ACACIA_BEEHIVE, settings()));
+    public static final Item DARK_OAK_BEEHIVE = register("dark_oak_beehive", new BlockItem(BeeBlocks.DARK_OAK_BEEHIVE, settings()));
+    public static final Item BEE_BRICKS = register("bee_bricks", new BlockItem(BeeBlocks.BEE_BRICKS, settings()));
 
     private static Item register(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(BetterBees.MODID, name), item);

@@ -23,6 +23,14 @@
   "block.betterbees.green_candle": "Green Candle",
   "block.betterbees.red_candle": "Red Candle",
   "block.betterbees.black_candle": "Black Candle",
+  "block.betterbees.spruce_beehive": "Spruce Beehive",
+  "block.betterbees.birch_beehive": "Birch Beehive",
+  "block.betterbees.jungle_beehive": "Jungle Beehive",
+  "block.betterbees.acacia_beehive": "Acacia Beehive",
+  "block.betterbees.dark_oak_beehive": "Dark Oak Beehive",
+  "block.betterbees.bee_bricks": "Bee Bricks",
 
-  "itemGroup.betterbees.group": "Better Bees"
+  "itemGroup.betterbees.group": "Better Bees",
+  
+  "block.minecraft.beehive": "Oak Beehive"
 }
