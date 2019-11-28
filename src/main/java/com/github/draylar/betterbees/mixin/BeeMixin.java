@@ -42,9 +42,9 @@ public abstract class BeeMixin extends AnimalEntity implements Flutterer {
         this.goalSelector.add(5, new MoveToApiaryGoal((BeeEntity) (Object) this));
     }
     
-    @Inject(at = @At(value = "RETURN", ordinal = 1), cancellable = true, method = "method_23984", locals = LocalCapture.CAPTURE_FAILHARD)
-    private void isHiveOnFire(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
-        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity && ((ApiaryBlockEntity) be).isHiveOnFire()) {
+    @Inject(at = @At(value = "RETURN", ordinal = 1), cancellable = true, method = "isHiveNearFire", locals = LocalCapture.CAPTURE_FAILHARD)
+    private void isHiveNearFire(CallbackInfoReturnable<Boolean> info, BlockEntity be) {
+        if (!info.getReturnValueZ() && be instanceof ApiaryBlockEntity && ((ApiaryBlockEntity) be).isHiveNearFire()) {
             info.setReturnValue(true);
         }
     }

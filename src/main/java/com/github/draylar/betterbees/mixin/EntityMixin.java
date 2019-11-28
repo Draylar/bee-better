@@ -83,7 +83,7 @@ public abstract class EntityMixin {
             for (int x = startX; x < endX; ++x) {
                 for (int y = startY; y < endY; ++y) {
                     for (int z = startZ; z < endZ; ++z) {
-                        pooledMutable.method_10113(x, y, z);
+                        pooledMutable.set(x, y, z);
                         FluidState fluidState = entity.world.getFluidState(pooledMutable);
 
                         if (fluidState.matches(tag)) {

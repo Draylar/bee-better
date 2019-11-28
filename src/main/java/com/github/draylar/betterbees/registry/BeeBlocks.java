@@ -2,6 +2,7 @@ package com.github.draylar.betterbees.registry;
 
 import com.github.draylar.betterbees.BetterBees;
 import com.github.draylar.betterbees.block.ApiaryBlock;
+import com.github.draylar.betterbees.block.BeeBrickBlock;
 import com.github.draylar.betterbees.block.CandleBlock;
 import com.github.draylar.betterbees.block.DyedCandleBlock;
 import com.github.draylar.betterbees.honey.HoneyFluidBlock;
@@ -44,7 +45,7 @@ public class BeeBlocks {
     public static final Block JUNGLE_BEEHIVE = register("jungle_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.DIRT).build()));
     public static final Block ACACIA_BEEHIVE = register("acacia_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.ORANGE).build()));
     public static final Block DARK_OAK_BEEHIVE = register("dark_oak_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build()));
-    public static final Block BEE_BRICKS = register("bee_bricks", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
+    public static final Block BEE_BRICKS = register("bee_bricks", new BeeBrickBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
     
     private static Block register(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier(BetterBees.MODID, name), block);

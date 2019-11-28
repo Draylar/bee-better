@@ -35,7 +35,7 @@ public class HoneyPoolFeature extends LakeFeature {
         ArrayList<BlockPos> placedPositions = new ArrayList<>();
 
         while (blockPos.getY() > 5 && world.isAir(blockPos)) {
-            blockPos = blockPos.method_10074();
+            blockPos = blockPos.down();
         }
 
         if (blockPos.getY() <= 4) {
