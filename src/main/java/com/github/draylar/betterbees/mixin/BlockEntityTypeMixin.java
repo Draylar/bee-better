@@ -13,7 +13,7 @@ import net.minecraft.block.entity.BlockEntityType;
 public class BlockEntityTypeMixin {
 	@Inject(method = "supports(Lnet/minecraft/block/Block;)Z", at = @At("HEAD"), cancellable = true)
 	private void supports(Block block, CallbackInfoReturnable<Boolean> info) {
-		if (BlockEntityType.BEEHIVE.equals((Object) this) && block instanceof BeeHiveBlock) {
+		if (BlockEntityType.BEEHIVE.equals(this) && block instanceof BeeHiveBlock) {
 			info.setReturnValue(true);
 		}
 	}

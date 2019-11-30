@@ -63,6 +63,18 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		super(settings);
 	}
 	
+	private static void dropHoneycomb(World world, BlockPos pos) {
+		for (int i = 0; i < 3; ++i) {
+			dropStack(world, pos, new ItemStack(Items.HONEYCOMB, 1));
+		}
+		
+		dropStack(world, pos, new ItemStack(BeeItems.BEESWAX_FLAKE, 1));
+	}
+	
+	public static List<BeeEntity> getNearbyBees(World world, BlockPos pos) {
+		return world.getNonSpectatingEntities(BeeEntity.class, (new Box(pos)).expand(8.0D, 6.0D, 8.0D));
+	}
+	
 	@Override
 	public boolean hasComparatorOutput(BlockState state) {
 		return true;
@@ -74,14 +86,6 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 	}
 	
 	public abstract int getHoneyLevel(BlockState state);
-	
-	private static void dropHoneycomb(World world, BlockPos pos) {
-		for(int i = 0; i < 3; ++i) {
-			dropStack(world, pos, new ItemStack(Items.HONEYCOMB, 1));
-		}
-		
-		dropStack(world, pos, new ItemStack(BeeItems.BEESWAX_FLAKE, 1));
-	}
 	
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
@@ -95,17 +99,13 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 				dropHoneycomb(world, pos);
 				heldStack.damage(1, player, ((playerx) -> playerx.sendToolBreakStatus(hand)));
 				harvested = true;
-			}
-			
-			else if (heldStack.getItem() == Items.GLASS_BOTTLE) {
+			} else if (heldStack.getItem() == Items.GLASS_BOTTLE) {
 				heldStack.decrement(1);
 				world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
 				
 				if (heldStack.isEmpty()) {
 					player.setStackInHand(hand, new ItemStack(Items.HONEY_BOTTLE));
-				}
-				
-				else if (!player.inventory.insertStack(new ItemStack(Items.HONEY_BOTTLE))) {
+				} else if (!player.inventory.insertStack(new ItemStack(Items.HONEY_BOTTLE))) {
 					player.dropItem(new ItemStack(Items.HONEY_BOTTLE), false);
 				}
 				
@@ -136,7 +136,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 	
 	@Environment(EnvType.CLIENT)
 	protected void addHoneyParticle(World world, BlockPos blockPos, VoxelShape voxelShape, double d) {
-		this.addHoneyParticle(world, (double)blockPos.getX() + voxelShape.getMinimum(Direction.Axis.X), (double)blockPos.getX() + voxelShape.getMaximum(Direction.Axis.X), (double)blockPos.getZ() + voxelShape.getMinimum(Direction.Axis.Z), (double)blockPos.getZ() + voxelShape.getMaximum(Direction.Axis.Z), d);
+		this.addHoneyParticle(world, (double) blockPos.getX() + voxelShape.getMinimum(Direction.Axis.X), (double) blockPos.getX() + voxelShape.getMaximum(Direction.Axis.X), (double) blockPos.getZ() + voxelShape.getMinimum(Direction.Axis.Z), (double) blockPos.getZ() + voxelShape.getMaximum(Direction.Axis.Z), d);
 	}
 	
 	@Environment(EnvType.CLIENT)
@@ -153,7 +153,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 	@Override
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 		if (getHoneyLevel(state) >= 5) {
-			for(int i = 0; i < random.nextInt(1) + 1; ++i) {
+			for (int i = 0; i < random.nextInt(1) + 1; ++i) {
 				this.playHoneyParticles(world, pos, state);
 			}
 		}
@@ -169,7 +169,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 				double e = voxelShape.getMinimum(Direction.Axis.Y);
 				
 				if (e > 0.0D) {
-					this.addHoneyParticle(world, blockPos, voxelShape, (double)blockPos.getY() + e - 0.05D);
+					this.addHoneyParticle(world, blockPos, voxelShape, (double) blockPos.getY() + e - 0.05D);
 				} else {
 					BlockPos blockPos2 = blockPos.down();
 					BlockState blockState2 = world.getBlockState(blockPos2);
@@ -177,15 +177,11 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 					double f = voxelShape2.getMaximum(Direction.Axis.Y);
 					
 					if ((f < 1.0D || !blockState2.isFullCube(world, blockPos2)) && blockState2.getFluidState().isEmpty()) {
-						this.addHoneyParticle(world, blockPos, voxelShape, (double)blockPos.getY() - 0.05D);
+						this.addHoneyParticle(world, blockPos, voxelShape, (double) blockPos.getY() - 0.05D);
 					}
 				}
 			}
 		}
-	}
-	
-	public static List<BeeEntity> getNearbyBees(World world, BlockPos pos) {
-		return world.getNonSpectatingEntities(BeeEntity.class, (new Box(pos)).expand(8.0D, 6.0D, 8.0D));
 	}
 	
 	protected void angerNearbyBees(World world, BlockPos pos) {
@@ -208,7 +204,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		super.afterBreak(world, player, pos, state, blockEntity, stack);
 		
 		if (!world.isClient && blockEntity instanceof ModdedBeehiveBlockEntity) {
-			ModdedBeehiveBlockEntity hiveBlockEntity = (ModdedBeehiveBlockEntity)blockEntity;
+			ModdedBeehiveBlockEntity hiveBlockEntity = (ModdedBeehiveBlockEntity) blockEntity;
 			
 			if (EnchantmentHelper.getLevel(Enchantments.SILK_TOUCH, stack) == 0) {
 				hiveBlockEntity.angerBees(player, state, BeeState.EMERGENCY);
@@ -240,7 +236,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		}
 	}
 	
-	public abstract void setHoneyLevel(World world,  BlockState state, BlockPos pos, int level);
+	public abstract void setHoneyLevel(World world, BlockState state, BlockPos pos, int level);
 	
 	public void addHoney(World world, BlockState state, BlockPos pos, int honey) {
 		setHoneyLevel(world, state, pos, Math.min(getHoneyLevel(state) + honey, getMaxHoneyLevel()));
@@ -255,10 +251,11 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 	protected boolean takeHoney(World world, BlockState state, BlockPos pos) {
 		int honeyLevel = getHoneyLevel(state);
 		
-		if(honeyLevel >= 5) {
+		if (honeyLevel >= 5) {
 			takeHoney(world, state, pos, 5);
 			return true;
-		} return false;
+		}
+		return false;
 	}
 	
 	@Override
@@ -275,7 +272,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 			BlockEntity blockEntity = world.getBlockEntity(pos);
 			
 			if (blockEntity instanceof ModdedBeehiveBlockEntity) {
-				ModdedBeehiveBlockEntity beehiveBlockEntity = (ModdedBeehiveBlockEntity)blockEntity;
+				ModdedBeehiveBlockEntity beehiveBlockEntity = (ModdedBeehiveBlockEntity) blockEntity;
 				ItemStack itemStack = new ItemStack(this);
 				int honeyLevel = getHoneyLevel(state);
 				boolean hasBees = !beehiveBlockEntity.hasNoBees();
@@ -296,7 +293,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 				hiveTag.putInt("honey_level", honeyLevel);
 				itemStack.putSubTag("BlockStateTag", hiveTag);
 				
-				ItemEntity itemEntity = new ItemEntity(world, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), itemStack);
+				ItemEntity itemEntity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), itemStack);
 				itemEntity.setToDefaultPickupDelay();
 				world.spawnEntity(itemEntity);
 			}
@@ -313,7 +310,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 			BlockEntity blockEntity = builder.getNullable(LootContextParameters.BLOCK_ENTITY);
 			
 			if (blockEntity instanceof ApiaryBlockEntity) {
-				ApiaryBlockEntity ApiaryBlockEntity = (ApiaryBlockEntity)blockEntity;
+				ApiaryBlockEntity ApiaryBlockEntity = (ApiaryBlockEntity) blockEntity;
 				ApiaryBlockEntity.angerBees(null, state, BeeState.EMERGENCY);
 			}
 		}

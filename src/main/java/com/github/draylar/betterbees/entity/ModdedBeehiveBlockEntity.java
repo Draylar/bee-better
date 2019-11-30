@@ -21,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
 import com.github.draylar.betterbees.block.ApiaryBlock;
+import com.github.draylar.betterbees.block.ModdedBeehiveBlock;
 import com.github.draylar.betterbees.util.BeeState;
 
 import com.google.common.collect.Lists;
@@ -57,8 +58,8 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 					return false;
 				}
 				
-				blockPos = (BlockPos)var1.next();
-			} while(!(this.world.getBlockState(blockPos).getBlock() instanceof FireBlock));
+				blockPos = (BlockPos) var1.next();
+			} while (!(this.world.getBlockState(blockPos).getBlock() instanceof FireBlock));
 			
 			return true;
 		}
@@ -79,10 +80,10 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 		if (playerEntity != null) {
 			Iterator var5 = list.iterator();
 			
-			while(var5.hasNext()) {
-				Entity entity = (Entity)var5.next();
+			while (var5.hasNext()) {
+				Entity entity = (Entity) var5.next();
 				if (entity instanceof BeeEntity) {
-					BeeEntity beeEntity = (BeeEntity)entity;
+					BeeEntity beeEntity = (BeeEntity) entity;
 					if (playerEntity.getPos().squaredDistanceTo(entity.getPos()) <= 16.0D) {
 						if (!this.method_23904()) {
 							beeEntity.setBeeAttacker(playerEntity);
@@ -98,9 +99,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 	
 	private List<Entity> tryReleaseBee(BlockState blockState, BeeState beeState) {
 		List<Entity> list = Lists.newArrayList();
-		this.bees.removeIf((bee) -> {
-			return this.releaseBee(blockState, bee.entityData, list, beeState);
-		});
+		this.bees.removeIf((bee) -> this.releaseBee(blockState, bee.entityData, list, beeState));
 		return list;
 	}
 	
@@ -108,7 +107,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 		this.tryEnterHive(entity, hasNectar, 0);
 	}
 	
-	public int method_23903() {
+	public int getBeeCount() {
 		return this.bees.size();
 	}
 	
@@ -126,14 +125,14 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 			this.bees.add(new Bee(compoundTag, ticksInHive, hasNectar ? 2400 : 600));
 			if (this.world != null) {
 				if (entity instanceof BeeEntity) {
-					BeeEntity beeEntity = (BeeEntity)entity;
+					BeeEntity beeEntity = (BeeEntity) entity;
 					if (beeEntity.hasFlower() && (!this.hasFlowerPos() || this.world.random.nextBoolean())) {
 						this.flowerPos = beeEntity.getFlowerPos();
 					}
 				}
 				
 				BlockPos blockPos = this.getPos();
-				this.world.playSound(null, (double)blockPos.getX(), (double)blockPos.getY(), (double)blockPos.getZ(), SoundEvents.BLOCK_BEEHIVE_ENTER, SoundCategory.BLOCKS, 1.0F, 1.0F);
+				this.world.playSound(null, blockPos.getX(), blockPos.getY(), blockPos.getZ(), SoundEvents.BLOCK_BEEHIVE_ENTER, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 			
 			entity.remove();
@@ -160,9 +159,9 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 				if (entity != null) {
 					float entityWidth = entity.getWidth();
 					double entitySize = 0.55D + (double) (entityWidth / 2.0F);
-					double spawnX = (double)pos.getX() + 0.5D + entitySize * (double)direction.getOffsetX();
-					double spawnY = (double)pos.getY() + 0.5D - (double)(entity.getHeight() / 2.0F);
-					double spawnZ = (double)pos.getZ() + 0.5D + entitySize * (double)direction.getOffsetZ();
+					double spawnX = (double) pos.getX() + 0.5D + entitySize * (double) direction.getOffsetX();
+					double spawnY = (double) pos.getY() + 0.5D - (double) (entity.getHeight() / 2.0F);
+					double spawnZ = (double) pos.getZ() + 0.5D + entitySize * (double) direction.getOffsetZ();
 					entity.setPositionAndAngles(spawnX, spawnY, spawnZ, entity.yaw, entity.pitch);
 					
 					if (!entity.getType().isTaggedWith(EntityTypeTags.BEEHIVE_INHABITORS)) {
@@ -187,7 +186,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 											--j;
 										}
 										
-										this.world.setBlockState(this.getPos(), blockState.with(ApiaryBlock.HONEY_LEVEL, i + j));
+										((ModdedBeehiveBlock) blockState.getBlock()).addHoney(world, blockState, getPos(), j);
 									}
 								}
 							}
@@ -199,7 +198,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 						}
 						
 						BlockPos apiaryPos = this.getPos();
-						this.world.playSound(null, (double)apiaryPos.getX(), (double)apiaryPos.getY(), (double)apiaryPos.getZ(), SoundEvents.BLOCK_BEEHIVE_EXIT, SoundCategory.BLOCKS, 1.0F, 1.0F);
+						this.world.playSound(null, apiaryPos.getX(), apiaryPos.getY(), apiaryPos.getZ(), SoundEvents.BLOCK_BEEHIVE_EXIT, SoundCategory.BLOCKS, 1.0F, 1.0F);
 						return this.world.spawnEntity(entity);
 					}
 				} else {
@@ -217,7 +216,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 		Iterator<Bee> iterator = this.bees.iterator();
 		BlockState blockState = this.getCachedState();
 		
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Bee bee = iterator.next();
 			
 			if (bee.ticksInHive > bee.minOccupationTicks) {
@@ -239,9 +238,9 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 			this.tickBees();
 			BlockPos blockPos = this.getPos();
 			if (this.bees.size() > 0 && this.world.getRandom().nextDouble() < 0.005D) {
-				double d = (double)blockPos.getX() + 0.5D;
-				double e = (double)blockPos.getY();
-				double f = (double)blockPos.getZ() + 0.5D;
+				double d = (double) blockPos.getX() + 0.5D;
+				double e = blockPos.getY();
+				double f = (double) blockPos.getZ() + 0.5D;
 				this.world.playSound(null, d, e, f, SoundEvents.BLOCK_BEEHIVE_WORK, SoundCategory.BLOCKS, 1.0F, 1.0F);
 			}
 		}
@@ -252,7 +251,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 		this.bees.clear();
 		ListTag listTag = compoundTag.getList("Bees", 10);
 		
-		for(int i = 0; i < listTag.size(); ++i) {
+		for (int i = 0; i < listTag.size(); ++i) {
 			CompoundTag compoundTag2 = listTag.getCompound(i);
 			Bee bee = new Bee(compoundTag2.getCompound("EntityData"), compoundTag2.getInt("TicksInHive"), compoundTag2.getInt("MinOccupationTicks"));
 			this.bees.add(bee);
@@ -279,8 +278,8 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 		ListTag listTag = new ListTag();
 		Iterator var2 = this.bees.iterator();
 		
-		while(var2.hasNext()) {
-			Bee bee = (Bee)var2.next();
+		while (var2.hasNext()) {
+			Bee bee = (Bee) var2.next();
 			bee.entityData.removeUuid("UUID");
 			CompoundTag compoundTag = new CompoundTag();
 			compoundTag.put("EntityData", bee.entityData);
@@ -294,8 +293,8 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 	
 	private static class Bee {
 		private final CompoundTag entityData;
-		private int ticksInHive;
 		private final int minOccupationTicks;
+		private int ticksInHive;
 		
 		private Bee(CompoundTag entityData, int ticksInHive, int minOccupationTicks) {
 			entityData.removeUuid("UUID");
