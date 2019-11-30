@@ -4,9 +4,9 @@ import com.github.draylar.betterbees.util.IBeeAccessor;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.util.math.BlockPos;
 
-public class MoveToApiaryGoal extends BeeMoveToTargetGoal {
+public class MoveToModdedHiveGoal extends BeeMoveToTargetGoal {
 
-    public MoveToApiaryGoal(BeeEntity bee) {
+    public MoveToModdedHiveGoal(BeeEntity bee) {
         super(bee, 2, 48);
     }
 

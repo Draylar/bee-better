@@ -1,13 +1,14 @@
 package com.github.draylar.betterbees.ai;
 
 import com.github.draylar.betterbees.entity.ApiaryBlockEntity;
+import com.github.draylar.betterbees.entity.ModdedBeehiveBlockEntity;
 import com.github.draylar.betterbees.util.IBeeAccessor;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.passive.BeeEntity;
 
-public class EnterApiaryGoal extends NotAngryGoal {
+public class EnterModdedHiveGoal extends NotAngryGoal {
 
-    public EnterApiaryGoal(BeeEntity bee) {
+    public EnterModdedHiveGoal(BeeEntity bee) {
         super(bee);
     }
 
@@ -18,8 +19,8 @@ public class EnterApiaryGoal extends NotAngryGoal {
         if (this.getBee().hasHive() && beeAccessor.canBeeEnterHive() && beeAccessor.getHivePos().isWithinDistance(this.getBee().getPos(), 2.0D)) {
             BlockEntity blockEntity = this.getBee().world.getBlockEntity(beeAccessor.getHivePos());
 
-            if (blockEntity instanceof ApiaryBlockEntity) {
-                ApiaryBlockEntity beeHiveBlockEntity = (ApiaryBlockEntity) blockEntity;
+            if (blockEntity instanceof ModdedBeehiveBlockEntity) {
+                ModdedBeehiveBlockEntity beeHiveBlockEntity = (ModdedBeehiveBlockEntity) blockEntity;
 
                 if (!beeHiveBlockEntity.isFullOfBees()) {
                     return true;
@@ -43,8 +44,8 @@ public class EnterApiaryGoal extends NotAngryGoal {
 
         BlockEntity blockEntity = this.getBee().world.getBlockEntity(beeAccessor.getHivePos());
 
-        if (blockEntity instanceof ApiaryBlockEntity) {
-            ApiaryBlockEntity beeHiveBlockEntity = (ApiaryBlockEntity) blockEntity;
+        if (blockEntity instanceof ModdedBeehiveBlockEntity) {
+            ModdedBeehiveBlockEntity beeHiveBlockEntity = (ModdedBeehiveBlockEntity) blockEntity;
             beeHiveBlockEntity.tryEnterHive(this.getBee(), this.getBee().hasNectar());
         }
     }

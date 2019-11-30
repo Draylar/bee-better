@@ -10,6 +10,7 @@ import net.minecraft.village.PointOfInterest;
 import net.minecraft.village.PointOfInterestStorage;
 
 import com.github.draylar.betterbees.entity.ApiaryBlockEntity;
+import com.github.draylar.betterbees.entity.ModdedBeehiveBlockEntity;
 import com.github.draylar.betterbees.registry.BeePOI;
 import com.github.draylar.betterbees.util.IBeeAccessor;
 
@@ -37,7 +38,7 @@ public class FindModdedHiveGoal extends NotAngryGoal {
         Stream<BlockPos> stream = this.method_23742(20);
         Optional<BlockPos> optional = stream.filter((blockPos) -> {
             BlockEntity blockEntity = this.getBee().world.getBlockEntity(blockPos);
-            if (blockEntity instanceof BeeHiveBlockEntity && !((BeeHiveBlockEntity) blockEntity).isFullOfBees()) {
+            if ((blockEntity instanceof BeeHiveBlockEntity && !((BeeHiveBlockEntity) blockEntity).isFullOfBees()) || (blockEntity instanceof ModdedBeehiveBlockEntity && !((ModdedBeehiveBlockEntity) blockEntity).isFullOfBees())) {
                 Path path = this.getBee().getNavigation().findPathTo(blockPos, 20);
                 return path != null;
             } else {

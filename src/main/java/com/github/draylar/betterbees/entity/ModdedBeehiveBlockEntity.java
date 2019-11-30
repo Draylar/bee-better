@@ -112,9 +112,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 		return this.bees.size();
 	}
 	
-	private static int getHoneyLevel(BlockState blockState) {
-		return blockState.get(ApiaryBlock.HONEY_LEVEL);
-	}
+	public abstract int getHoneyLevel(BlockState blockState);
 	
 	public boolean method_23904() {
 		return CampfireBlock.method_23895(this.world, this.getPos(), 5);

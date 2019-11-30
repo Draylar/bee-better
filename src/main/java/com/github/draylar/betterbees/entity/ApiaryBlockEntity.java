@@ -1,6 +1,7 @@
 package com.github.draylar.betterbees.entity;
 
 import com.github.draylar.betterbees.block.ApiaryBlock;
+import com.github.draylar.betterbees.block.BeeBrickBlock;
 import com.github.draylar.betterbees.block.ModdedBeehiveBlock;
 import com.github.draylar.betterbees.registry.BeeEntities;
 import com.github.draylar.betterbees.util.BeeState;
@@ -31,6 +32,11 @@ public class ApiaryBlockEntity extends ModdedBeehiveBlockEntity {
 
     public ApiaryBlockEntity() {
         super(BeeEntities.APIARY);
+    }
+    
+    @Override
+    public int getHoneyLevel(BlockState state) {
+        return state.get(ApiaryBlock.HONEY_LEVEL);
     }
     
     @Override

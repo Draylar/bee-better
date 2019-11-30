@@ -184,11 +184,15 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		}
 	}
 	
-	protected void angerNearbyBees(World world, BlockPos blockPos) {
-		List<BeeEntity> nearbyBees = world.getNonSpectatingEntities(BeeEntity.class, (new Box(blockPos)).expand(8.0D, 6.0D, 8.0D));
+	public static List<BeeEntity> getNearbyBees(World world, BlockPos pos) {
+		return world.getNonSpectatingEntities(BeeEntity.class, (new Box(pos)).expand(8.0D, 6.0D, 8.0D));
+	}
+	
+	protected void angerNearbyBees(World world, BlockPos pos) {
+		List<BeeEntity> nearbyBees = getNearbyBees(world, pos);
 		
 		if (!nearbyBees.isEmpty()) {
-			List<PlayerEntity> nearbyPlayers = world.getNonSpectatingEntities(PlayerEntity.class, (new Box(blockPos)).expand(8.0D, 6.0D, 8.0D));
+			List<PlayerEntity> nearbyPlayers = world.getNonSpectatingEntities(PlayerEntity.class, (new Box(pos)).expand(8.0D, 6.0D, 8.0D));
 			int playerCount = nearbyPlayers.size();
 			
 			for (BeeEntity beeEntity : nearbyBees) {
