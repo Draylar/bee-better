@@ -34,6 +34,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -63,7 +64,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		super(settings);
 	}
 	
-	private static void dropHoneycomb(World world, BlockPos pos) {
+	public static void dropHoneycomb(World world, BlockPos pos) {
 		for (int i = 0; i < 3; ++i) {
 			dropStack(world, pos, new ItemStack(Items.HONEYCOMB, 1));
 		}
@@ -226,7 +227,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		}
 	}
 	
-	protected void takeHoneyAndAnger(World world, BlockState blockState, BlockPos blockPos, PlayerEntity playerEntity, BeeState beeState) {
+	public void takeHoneyAndAnger(World world, BlockState blockState, BlockPos blockPos, PlayerEntity playerEntity, BeeState beeState) {
 		takeHoney(world, blockState, blockPos);
 		BlockEntity blockEntity = world.getBlockEntity(blockPos);
 		
@@ -242,7 +243,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		setHoneyLevel(world, state, pos, Math.min(getHoneyLevel(state) + honey, getMaxHoneyLevel()));
 	}
 	
-	protected abstract int getMaxHoneyLevel();
+	public abstract int getMaxHoneyLevel();
 	
 	public void takeHoney(World world, BlockState state, BlockPos pos, int honey) {
 		setHoneyLevel(world, state, pos, Math.max(getHoneyLevel(state) - honey, 0));
@@ -331,4 +332,6 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		
 		return super.getStateForNeighborUpdate(state, facing, neighborState, world, pos, neighborPos);
 	}
+	
+	public abstract IntProperty getHoneyProperty();
 }

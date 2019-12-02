@@ -9,6 +9,7 @@ import net.minecraft.util.registry.Registry;
 import com.github.draylar.betterbees.BetterBees;
 import com.github.draylar.betterbees.honey.HoneyBucketItem;
 import com.github.draylar.betterbees.item.BeeStingerItem;
+import com.github.draylar.betterbees.item.HiveAnalyzerItem;
 
 public class BeeItems {
 	
@@ -41,6 +42,7 @@ public class BeeItems {
 	public static final Item ACACIA_BEEHIVE = register("acacia_beehive", new BlockItem(BeeBlocks.ACACIA_BEEHIVE, settings()));
 	public static final Item DARK_OAK_BEEHIVE = register("dark_oak_beehive", new BlockItem(BeeBlocks.DARK_OAK_BEEHIVE, settings()));
 	public static final Item BEE_BRICKS = register("bee_bricks", new BlockItem(BeeBlocks.BEE_BRICKS, settings()));
+	public static final Item HIVE_ANALYZER = register("hive_analyzer", new HiveAnalyzerItem(settings().maxCount(1)));
 	
 	private BeeItems() {
 		// NO-OP

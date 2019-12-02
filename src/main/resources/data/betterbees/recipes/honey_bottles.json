@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "betterbees:honey_bucket"
+    }
+  ],
+  "result": {
+    "item": "minecraft:honey_bottle",
+    "count": 3
+  }
+}

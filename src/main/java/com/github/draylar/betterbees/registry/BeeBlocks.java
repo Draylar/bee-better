@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.MaterialColor;
+import net.minecraft.block.PistonBlock;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;

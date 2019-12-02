@@ -36,13 +36,18 @@ public class ApiaryBlock extends ModdedBeehiveBlock {
 	}
 	
 	@Override
-	protected int getMaxHoneyLevel() {
+	public int getMaxHoneyLevel() {
 		return MAX_HONEY;
 	}
 	
 	@Override
 	public ModdedBeehiveBlockEntity createBlockEntity(BlockView view) {
 		return new ApiaryBlockEntity();
+	}
+	
+	@Override
+	public IntProperty getHoneyProperty() {
+		return HONEY_LEVEL;
 	}
 	
 	@Override

@@ -3,6 +3,7 @@
   "item.betterbees.beeswax_flake": "Beeswax Flake",
   "item.betterbees.compressed_beeswax": "Compressed Beeswax",
   "item.betterbees.bee_stinger": "Bee Stinger",
+  "item.betterbees.hive_analyzer": "Hive Analyzer",
 
   "block.betterbees.beeswax": "Beeswax Block",
   "block.betterbees.apiary": "Apiary",
@@ -31,6 +32,16 @@
   "block.betterbees.bee_bricks": "Bee Bricks",
 
   "itemGroup.betterbees.group": "Better Bees",
+  
+  "text.betterbees.no_bees_inside": "It doesn't seem like there are any Bees inside.",
+  "text.betterbees.one_bee_inside": "There seems to be a single Bee inside.",
+  "text.betterbees.filled_with_bees_inside": "It seems to be absolutely buzzing with Bees inside.",
+  "text.betterbees.multiple_bees_inside": "There seems to be multiple Bees inside.",
+  "text.betterbees.no_honey_inside": "There doesn't seem to be any Honey inside.",
+  "text.betterbees.filled_with_honey_inside": "The Hive is dripping with Honey.",
+  "text.betterbees.almost_enough_honey_inside": "There seems to be almost enough Honey to fill a Bottle.",
+  "text.betterbees.enough_honey_inside": "There seems to be enough Honey to fill a Bottle, but the Hive can hold more.",
+  "text.betterbees.some_honey_inside": "There seems to be a little bit of Honey inside.",
   
   "block.minecraft.beehive": "Oak Beehive"
 }

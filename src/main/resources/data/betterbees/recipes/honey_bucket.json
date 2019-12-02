@@ -2,7 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "minecraft:honeycomb_block"
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "minecraft:honey_bottle"
     },
     {
       "item": "minecraft:bucket"

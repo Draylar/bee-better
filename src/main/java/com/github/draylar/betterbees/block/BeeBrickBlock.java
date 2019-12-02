@@ -33,7 +33,7 @@ public class BeeBrickBlock extends ModdedBeehiveBlock {
 	}
 	
 	@Override
-	protected int getMaxHoneyLevel() {
+	public int getMaxHoneyLevel() {
 		return MAX_HONEY;
 	}
 	
@@ -45,5 +45,10 @@ public class BeeBrickBlock extends ModdedBeehiveBlock {
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		builder.add(HONEY_LEVEL, FACING);
+	}
+	
+	@Override
+	public IntProperty getHoneyProperty() {
+		return HONEY_LEVEL;
 	}
 }

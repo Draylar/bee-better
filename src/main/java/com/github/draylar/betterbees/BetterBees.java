@@ -3,10 +3,14 @@ package com.github.draylar.betterbees;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 
+import com.github.draylar.betterbees.dispenser.GlassBottleDispenserBehavior;
+import com.github.draylar.betterbees.dispenser.ShearsDispenserBehavior;
 import com.github.draylar.betterbees.registry.BeeBlocks;
 import com.github.draylar.betterbees.registry.BeeEntities;
 import com.github.draylar.betterbees.registry.BeeFluids;
@@ -36,5 +40,9 @@ public class BetterBees implements ModInitializer {
 		BeeEntities.init();
 		BeePOI.init();
 		BeeWorld.init();
+		
+		// shitty hack but it's infinitely easier than mixin-ing into this
+		DispenserBlock.registerBehavior(Items.GLASS_BOTTLE.asItem(), new GlassBottleDispenserBehavior());
+		DispenserBlock.registerBehavior(Items.SHEARS.asItem(), new ShearsDispenserBehavior());
 	}
 }
