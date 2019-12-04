@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "betterbees:block/polished_beeswax_slabs" }
+    "": { "model": "betterbees:block/beeswax/polished_beeswax_slabs" }
   }
 }

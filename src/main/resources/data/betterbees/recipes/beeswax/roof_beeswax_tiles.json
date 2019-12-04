@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "betterbees:decorative_beeswax"
+  },
+  "result": "betterbees:roof_beeswax_tiles",
+  "count": 1
+}

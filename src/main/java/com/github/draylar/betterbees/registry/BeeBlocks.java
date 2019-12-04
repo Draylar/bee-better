@@ -30,6 +30,34 @@ public class BeeBlocks {
 	public static final Block HONEY_FLUID = register("honey", new HoneyFluidBlock(FabricBlockSettings.of(Material.WATER).noCollision().strength(100.0F, 100f).dropsNothing().build()), (BlockItem) null);
 	
 	public static final Block BEESWAX_BLOCK = register("beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANCIENT_BEESWAX_BRICKS = register("ancient_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANCIENT_CRUMBLING_BEESWAX = register("ancient_crumbling_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANCIENT_GRAVELLED_BEESWAX = register("ancient_gravelled_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANCIENT_MOSSY_CRUMBLING_BEESWAX = register("ancient_mossy_crumbling_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANTIQUE_BEESWAX_BRICKS = register("antique_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANTIQUE_CHISELED_BEESWAX = register("antique_chiseled_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANTIQUE_FLAKY_BEESWAX_BRICKS = register("antique_flaky_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANTIQUE_MOSSY_BEESWAX_BRICKS = register("antique_mossy_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANTIQUE_POLISHED_BEESWAX = register("antique_polished_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ANTIQUE_POLISHED_BEESWAX_SLABS = register("antique_polished_beeswax_slabs", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block BEESWAX_BRICKS = register("beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block BUBBLY_BEESWAX_BRICKS = register("bubbly_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block CHISELED_BEESWAX = register("chiseled_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block CHISELED_BEESWAX_PIMPLE = register("chiseled_beeswax_pimple", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block CRUMBLING_BEESWAX = register("crumbling_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_BEESWAX_TILES = register("egregious_beeswax_tiles", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_POLISHED_BEESWAX = register("egregious_polished_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_SMALL_BEESWAX_BRICKS = register("egregious_small_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_SMALL_BEESWAX_TILES = register("egregious_small_beeswax_tiles", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_SQUARE_BEESWAX_BRICKS = register("egregious_square_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_WINDMILL_BEESWAX_TILES_CLOCKWISE = register("egregious_windmill_beeswax_tiles_clockwise", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block EGREGIOUS_WINDMILL_BEESWAX_TILES_COUNTERCLOCKWISE = register("egregious_windmill_beeswax_tiles_counterclockwise", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block FLAKY_BEESWAX_BRICKS = register("flaky_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block MOSSY_BEESWAX_BRICKS = register("mossy_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block POLISHED_BEESWAX = register("polished_beeswax", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block POLISHED_BEESWAX_SLABS = register("polished_beeswax_slabs", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block ROOF_BEESWAX_TILES = register("roof_beeswax_tiles", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
+	public static final Block TINY_BEESWAX_BRICKS = register("tiny_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
 	
 	public static final Block APIARY = register("apiary", new ApiaryBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).build()));
 	

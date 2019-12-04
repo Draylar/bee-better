@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "betterbees:ancient_beeswax_bricks",
+    "betterbees:ancient_crumbling_beeswax",
+    "betterbees:ancient_gravelled_beeswax",
+    "betterbees:ancient_mossy_crumbling_beeswax",
+    "betterbees:antique_beeswax_bricks",
+    "betterbees:antique_chiseled_beeswax",
+    "betterbees:antique_flaky_beeswax_bricks",
+    "betterbees:antique_mossy_beeswax_bricks",
+    "betterbees:antique_polished_beeswax",
+    "betterbees:antique_polished_beeswax_slabs",
+    "betterbees:beeswax_bricks",
+    "betterbees:bubbly_beeswax_bricks",
+    "betterbees:chiseled_beeswax",
+    "betterbees:chiseled_beeswax_pimple",
+    "betterbees:crumbling_beeswax",
+    "betterbees:egregious_beeswax_tiles",
+    "betterbees:egregious_polished_beeswax",
+    "betterbees:egregious_small_beeswax_bricks",
+    "betterbees:egregious_small_beeswax_tiles",
+    "betterbees:egregious_square_beeswax_bricks",
+    "betterbees:egregious_windmill_beeswax_tiles_clockwise",
+    "betterbees:egregious_windmill_beeswax_tiles_counterclockwise",
+    "betterbees:flaky_beeswax_bricks",
+    "betterbees:mossy_beeswax_bricks",
+    "betterbees:polished_beeswax",
+    "betterbees:polished_beeswax_slabs",
+    "betterbees:roof_beeswax_tiles",
+    "betterbees:tiny_beeswax_bricks"
+  ]
+}

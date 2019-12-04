@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "betterbees:block/crumbling_beeswax" }
+    "": { "model": "betterbees:block/beeswax/crumbling_beeswax" }
   }
 }

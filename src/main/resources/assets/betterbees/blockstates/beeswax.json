@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "betterbees:block/beeswax" }
+    "": { "model": "betterbees:block/beeswax/beeswax" }
   }
 }

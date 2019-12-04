@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "betterbees:block/egregious_windmill_beeswax_tiles_counterclockwise"
-  }
-}

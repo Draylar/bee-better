@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "betterbees:block/egregious_windmill_beeswax_tiles_clockwise" }
+    "": { "model": "betterbees:block/beeswax/egregious_windmill_beeswax_tiles_clockwise" }
   }
 }

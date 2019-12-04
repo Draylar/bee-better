@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "betterbees:block/roof_beeswax_tiles" }
+    "": { "model": "betterbees:block/beeswax/roof_beeswax_tiles" }
   }
 }

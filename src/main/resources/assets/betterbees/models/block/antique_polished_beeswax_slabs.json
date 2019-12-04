@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "betterbees:block/antique_polished_beeswax_slabs"
-  }
-}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "betterbees:decorative_beeswax"
+  },
+  "result": "betterbees:egregious_windmill_beeswax_tiles_clockwise",
+  "count": 1
+}

@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "betterbees:block/ancient_mossy_crumbling_beeswax" }
+    "": { "model": "betterbees:block/beeswax/ancient_mossy_crumbling_beeswax" }
   }
 }
