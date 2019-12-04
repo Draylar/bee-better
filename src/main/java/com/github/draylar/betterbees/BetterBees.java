@@ -25,7 +25,7 @@ public class BetterBees implements ModInitializer {
 	
 	public static final String MODID = "betterbees";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
-	public static final ItemGroup GROUP = FabricItemGroupBuilder.build(id("group"), () -> new ItemStack(BeeItems.APIARY));
+	public static final ItemGroup GROUP = FabricItemGroupBuilder.build(id("group"), () -> new ItemStack(BeeItems.HONEY_BUCKET));
 	
 	public static Identifier id(String name) {
 		return new Identifier(MODID, name);
@@ -44,5 +44,9 @@ public class BetterBees implements ModInitializer {
 		// shitty hack but it's infinitely easier than mixin-ing into this
 		DispenserBlock.registerBehavior(Items.GLASS_BOTTLE.asItem(), new GlassBottleDispenserBehavior());
 		DispenserBlock.registerBehavior(Items.SHEARS.asItem(), new ShearsDispenserBehavior());
+	}
+	
+	public static void log(String log) {
+		LOGGER.info("["+MODID+"] "+log);
 	}
 }

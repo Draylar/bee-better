@@ -14,6 +14,10 @@ minecraft {
 repositories {
 	maven { url = "https://maven.fabricmc.net/" }
 	maven { url = "https://jitpack.io" }
+	maven {
+		name = "Cotton"
+		url = "http://server.bbkr.space:8081/artifactory/libs-release/"
+	}
 }
 
 dependencies {
@@ -21,6 +25,9 @@ dependencies {
 	mappings "net.fabricmc:yarn:${project.minecraft_version}+build.${project.yarn_build}"
 	modApi "net.fabricmc:fabric-loader:${project.loader_version}"
 	modApi "net.fabricmc.fabric-api:fabric-api:${project.api_version}"
+
+	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
+	include "io.github.cottonmc:LibCD:${project.libcd_version}"
 
 	modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
 	modCompile ("me.shedaniel:RoughlyEnoughItems:${project.rei_version}") { exclude(module: "ModMenu") }

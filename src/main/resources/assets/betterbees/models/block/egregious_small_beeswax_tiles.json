@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "betterbees:block/egregious_small_beeswax_tiles"
+  }
+}

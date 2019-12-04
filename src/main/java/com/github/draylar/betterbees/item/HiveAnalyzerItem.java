@@ -68,6 +68,7 @@ public class HiveAnalyzerItem extends Item {
 				} else {
 					player.sendMessage(new TranslatableText("text.betterbees.some_honey_inside"));
 				}
+				player.getItemCooldownManager().set(this, 20);
 				return ActionResult.SUCCESS;
 			}
 			return super.useOnBlock(context);

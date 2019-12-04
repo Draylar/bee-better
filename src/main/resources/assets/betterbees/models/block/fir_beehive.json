@@ -1,0 +1,10 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "particle": "betterbees:block/traverse/fir_beehive_side",
+        "bottom": "betterbees:block/traverse/fir_beehive_end",
+        "top": "betterbees:block/traverse/fir_beehive_end",
+        "front": "betterbees:block/traverse/fir_beehive_front",
+        "side": "betterbees:block/traverse/fir_beehive_side"
+    }
+}
