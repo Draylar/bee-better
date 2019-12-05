@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "beebetter:decorative_beeswax"
+  },
+  "result": "beebetter:egregious_small_beeswax_bricks",
+  "count": 1
+}

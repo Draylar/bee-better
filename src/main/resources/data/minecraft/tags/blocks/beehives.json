@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "betterbees:apiary",
-    "#betterbees:wooden_beehives",
-    "betterbees:bee_bricks"
+    "beebetter:apiary",
+    "#beebetter:wooden_beehives",
+    "beebetter:bee_bricks"
   ]
 }

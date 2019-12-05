@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "betterbees:decorative_beeswax"
-  },
-  "result": "betterbees:mossy_beeswax_bricks",
-  "count": 1
-}

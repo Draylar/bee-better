@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "beebetter:block/beeswax/antique_mossy_beeswax_bricks"
+  }
+}

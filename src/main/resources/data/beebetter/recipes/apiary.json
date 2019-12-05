@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#c#",
+    "#f#",
+    "#b#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "f": {
+      "tag": "beebetter:wooden_beehives"
+    },
+    "b": {
+      "item": "beebetter:honey_bucket"
+    },
+    "c":{
+      "item": "beebetter:beeswax"
+    }
+  },
+  "result": {
+    "item": "beebetter:apiary"
+  }
+}

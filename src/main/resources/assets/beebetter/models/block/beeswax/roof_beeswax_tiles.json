@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "beebetter:block/beeswax/roof_beeswax_tiles"
+  }
+}

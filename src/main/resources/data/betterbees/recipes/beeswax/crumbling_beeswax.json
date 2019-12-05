@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "tag": "betterbees:decorative_beeswax"
-  },
-  "result": "betterbees:crumbling_beeswax",
-  "count": 1
-}

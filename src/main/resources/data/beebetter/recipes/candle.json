@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s",
+    "w"
+  ],
+  "key": {
+    "w": {
+      "item": "beebetter:compressed_beeswax"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "beebetter:candle",
+    "count": 4
+  }
+}

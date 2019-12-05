@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "beebetter:compressed_beeswax"
+    }
+  },
+  "result": {
+    "item": "beebetter:beeswax_bricks",
+    "count":4
+  }
+}

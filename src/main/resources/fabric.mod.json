@@ -1,13 +1,17 @@
 
 {
   "schemaVersion": 1,
-  "id": "betterbees",
+  "id": "beebetter",
   "version": "${version}",
 
-  "name": "Better Bees",
+  "name": "Bee Better",
   "description": "Simple mod that focuses on improving bees!",
   "authors": [
-    "Draylar"
+    "Draylar",
+    "Shnupbups"
+  ],
+  "contributors": [
+    "Yoghurt4C"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/better-bees",
@@ -15,19 +19,19 @@
   },
 
   "license": "MIT",
-  "icon": "assets/betterbees/icon.png",
+  "icon": "assets/beebetter/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.github.draylar.betterbees.BetterBees"
+      "com.github.draylar.beebetter.BeeBetter"
     ],
     "client": [
-      "com.github.draylar.betterbees.BetterBeesClient"
+      "com.github.draylar.beebetter.BeeBetterClient"
     ]
   },
   "mixins": [
-    "betterbees.mixins.json"
+    "beebetter.mixins.json"
   ],
 
   "depends": {

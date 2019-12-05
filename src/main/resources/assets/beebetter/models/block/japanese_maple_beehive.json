@@ -1,0 +1,10 @@
+{
+    "parent": "block/orientable_with_bottom",
+    "textures": {
+        "particle": "beebetter:block/terrestria/japanese_maple_beehive_side",
+        "bottom": "beebetter:block/terrestria/japanese_maple_beehive_end",
+        "top": "beebetter:block/terrestria/japanese_maple_beehive_end",
+        "front": "beebetter:block/terrestria/japanese_maple_beehive_front",
+        "side": "beebetter:block/terrestria/japanese_maple_beehive_side"
+    }
+}

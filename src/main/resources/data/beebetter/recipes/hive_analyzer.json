@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WCW",
+    "WRW",
+    "WHW"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:comparator"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    },
+    "W": {
+      "item": "beebetter:compressed_beeswax"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "beebetter:hive_analyzer"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:beehive",
+    "beebetter:spruce_beehive",
+    "beebetter:birch_beehive",
+    "beebetter:jungle_beehive",
+    "beebetter:acacia_beehive",
+    "beebetter:dark_oak_beehive"
+  ],
+  "libcd": {
+    "entries": [
+      {
+        "when": [{ "libcd:mod_loaded": "luminiferous_uplands" }],
+        "values": [
+          "beebetter:skyroot_beehive"
+        ]
+      },
+      {
+        "when": [{ "libcd:mod_loaded": "techreborn" }],
+        "values": [
+          "beebetter:rubber_beehive_tr"
+        ]
+      },
+      {
+        "when": [{ "libcd:mod_loaded": "terrestria" }],
+        "values": [
+          "beebetter:cypress_beehive",
+          "beebetter:hemlock_beehive",
+          "beebetter:japanese_maple_beehive",
+          "beebetter:rainbow_eucalyptus_beehive",
+          "beebetter:redwood_beehive",
+          "beebetter:rubber_beehive_terrestria",
+          "beebetter:sakura_beehive",
+          "beebetter:willow_beehive"
+        ]
+      },
+      {
+        "when": [{ "libcd:mod_loaded": "thehallow" }],
+        "values": [
+          "beebetter:deadwood_beehive"
+        ]
+      },
+      {
+        "when": [{ "libcd:mod_loaded": "traverse" }],
+        "values": [
+          "beebetter:fir_beehive"
+        ]
+      }
+    ]
+  }
+}

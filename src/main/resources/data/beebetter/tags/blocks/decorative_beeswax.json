@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "beebetter:ancient_beeswax_bricks",
+    "beebetter:ancient_crumbling_beeswax",
+    "beebetter:ancient_gravelled_beeswax",
+    "beebetter:ancient_mossy_crumbling_beeswax",
+    "beebetter:antique_beeswax_bricks",
+    "beebetter:antique_chiseled_beeswax",
+    "beebetter:antique_flaky_beeswax_bricks",
+    "beebetter:antique_mossy_beeswax_bricks",
+    "beebetter:antique_polished_beeswax",
+    "beebetter:antique_polished_beeswax_slabs",
+    "beebetter:beeswax_bricks",
+    "beebetter:bubbly_beeswax_bricks",
+    "beebetter:chiseled_beeswax",
+    "beebetter:chiseled_beeswax_pimple",
+    "beebetter:crumbling_beeswax",
+    "beebetter:egregious_beeswax_tiles",
+    "beebetter:egregious_polished_beeswax",
+    "beebetter:egregious_small_beeswax_bricks",
+    "beebetter:egregious_small_beeswax_tiles",
+    "beebetter:egregious_square_beeswax_bricks",
+    "beebetter:egregious_windmill_beeswax_tiles_clockwise",
+    "beebetter:egregious_windmill_beeswax_tiles_counterclockwise",
+    "beebetter:flaky_beeswax_bricks",
+    "beebetter:mossy_beeswax_bricks",
+    "beebetter:polished_beeswax",
+    "beebetter:polished_beeswax_slabs",
+    "beebetter:roof_beeswax_tiles",
+    "beebetter:tiny_beeswax_bricks"
+  ]
+}

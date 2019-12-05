@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "beebetter:decorative_beeswax"
+  },
+  "result": "beebetter:antique_chiseled_beeswax",
+  "count": 1
+}

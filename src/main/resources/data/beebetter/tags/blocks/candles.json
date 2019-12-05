@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "beebetter:candle",
+    "beebetter:white_candle",
+    "beebetter:orange_candle",
+    "beebetter:magenta_candle",
+    "beebetter:light_blue_candle",
+    "beebetter:yellow_candle",
+    "beebetter:lime_candle",
+    "beebetter:pink_candle",
+    "beebetter:gray_candle",
+    "beebetter:light_gray_candle",
+    "beebetter:cyan_candle",
+    "beebetter:purple_candle",
+    "beebetter:blue_candle",
+    "beebetter:brown_candle",
+    "beebetter:green_candle",
+    "beebetter:red_candle",
+    "beebetter:black_candle"
+  ]
+}
