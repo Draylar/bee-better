@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.block.BeeHiveBlock;
+import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -13,10 +13,10 @@ import net.minecraft.world.World;
 
 import com.github.draylar.beebetter.registry.BeeItems;
 
-@Mixin(BeeHiveBlock.class)
-public abstract class BeeHiveMixin extends Block {
+@Mixin(BeehiveBlock.class)
+public abstract class BeehiveMixin extends Block {
 	
-	public BeeHiveMixin(Settings settings) {
+	public BeehiveMixin(Settings settings) {
 		super(settings);
 	}
 	

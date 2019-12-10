@@ -7,7 +7,7 @@
     "BeeAccessor",
     "BeeMixin",
     "PointOfInterestTypeAccessor",
-    "BeeHiveMixin",
+    "BeehiveMixin",
     "BlockEntityTypeMixin",
     "IdentifierMixin"
   ],

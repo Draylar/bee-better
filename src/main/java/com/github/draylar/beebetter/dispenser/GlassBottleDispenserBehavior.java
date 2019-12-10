@@ -1,12 +1,12 @@
 package com.github.draylar.beebetter.dispenser;
 
-import net.minecraft.block.BeeHiveBlock;
+import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.block.dispenser.ItemDispenserBehavior;
-import net.minecraft.block.entity.BeeHiveBlockEntity;
+import net.minecraft.block.entity.BeehiveBlockEntity;
 import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -45,12 +45,12 @@ public class GlassBottleDispenserBehavior extends FallibleItemDispenserBehavior 
 		BlockState blockState = iWorld.getBlockState(blockPos);
 		Block block = blockState.getBlock();
 		if (block.matches(BlockTags.BEEHIVES)) {
-			if(block instanceof BeeHiveBlock && blockState.get(BeeHiveBlock.HONEY_LEVEL) >= 5) {
-				((BeeHiveBlock)blockState.getBlock()).emptyHoney(iWorld.getWorld(), blockState, blockPos, (PlayerEntity)null, BeeHiveBlockEntity.BeeState.BEE_RELEASED);
+			if(block instanceof BeehiveBlock && blockState.get(BeehiveBlock.HONEY_LEVEL) >= 5) {
+				((BeehiveBlock)blockState.getBlock()).takeHoney(iWorld.getWorld(), blockState, blockPos, (PlayerEntity)null, BeehiveBlockEntity.BeeState.BEE_RELEASED);
 				this.success = true;
 				return this.method_22141(pointer, stack, new ItemStack(Items.HONEY_BOTTLE));
 			} else if(block instanceof ModdedBeehiveBlock && blockState.get(((ModdedBeehiveBlock) block).getHoneyProperty()) >= 5) {
-				((ModdedBeehiveBlock)blockState.getBlock()).takeHoneyAndAnger(iWorld.getWorld(), blockState, blockPos, (PlayerEntity)null, BeeState.BEE_RELEASED);
+				((ModdedBeehiveBlock)blockState.getBlock()).takeHoney(iWorld.getWorld(), blockState, blockPos, (PlayerEntity)null, BeeState.BEE_RELEASED);
 				this.success = true;
 				return this.method_22141(pointer, stack, new ItemStack(Items.HONEY_BOTTLE));
 			} else {

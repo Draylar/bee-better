@@ -1,11 +1,11 @@
 package com.github.draylar.beebetter.dispenser;
 
-import net.minecraft.block.BeeHiveBlock;
+import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
-import net.minecraft.block.entity.BeeHiveBlockEntity;
+import net.minecraft.block.entity.BeehiveBlockEntity;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tag.BlockTags;
@@ -46,15 +46,15 @@ public class ShearsDispenserBehavior extends FallibleItemDispenserBehavior {
 				BlockState blockState = world.getBlockState(blockPos);
 				if (blockState.matches(BlockTags.BEEHIVES)) {
 					Block block = blockState.getBlock();
-					if(block instanceof BeeHiveBlock) {
-						int i = blockState.get(BeeHiveBlock.HONEY_LEVEL);
+					if(block instanceof BeehiveBlock) {
+						int i = blockState.get(BeehiveBlock.HONEY_LEVEL);
 						if (i >= 5) {
 							if (stack.damage(1, world.random, null)) {
 								stack.setCount(0);
 							}
 							
-							BeeHiveBlock.dropHoneycomb(world, blockPos);
-							((BeeHiveBlock)block).emptyHoney(world, blockState, blockPos, null, BeeHiveBlockEntity.BeeState.BEE_RELEASED);
+							BeehiveBlock.dropHoneycomb(world, blockPos);
+							((BeehiveBlock)block).takeHoney(world, blockState, blockPos, null, BeehiveBlockEntity.BeeState.BEE_RELEASED);
 							this.success = true;
 						}
 					} else if(block instanceof ModdedBeehiveBlock) {
@@ -65,7 +65,7 @@ public class ShearsDispenserBehavior extends FallibleItemDispenserBehavior {
 							}
 							
 							ModdedBeehiveBlock.dropHoneycomb(world, blockPos);
-							((ModdedBeehiveBlock)block).takeHoneyAndAnger(world, blockState, blockPos, null, BeeState.BEE_RELEASED);
+							((ModdedBeehiveBlock)block).takeHoney(world, blockState, blockPos, null, BeeState.BEE_RELEASED);
 							this.success = true;
 						}
 					}

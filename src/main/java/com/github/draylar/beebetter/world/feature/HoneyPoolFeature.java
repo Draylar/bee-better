@@ -10,9 +10,9 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.chunk.ChunkStatus;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.chunk.ChunkGeneratorConfig;
-import net.minecraft.world.gen.feature.BushFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.LakeFeature;
+import net.minecraft.world.gen.feature.SingleStateFeatureConfig;
 import com.mojang.datafixers.Dynamic;
 
 import com.github.draylar.beebetter.registry.BeeBlocks;
@@ -26,12 +26,12 @@ public class HoneyPoolFeature extends LakeFeature {
 	
 	private static final BlockState CAVE_AIR = Blocks.CAVE_AIR.getDefaultState();
 	
-	public HoneyPoolFeature(Function<Dynamic<?>, ? extends BushFeatureConfig> configFactory) {
+	public HoneyPoolFeature(Function<Dynamic<?>, ? extends SingleStateFeatureConfig> configFactory) {
 		super(configFactory);
 	}
 	
 	@Override
-	public boolean generate(IWorld world, ChunkGenerator<? extends ChunkGeneratorConfig> chunkGenerator, Random random, BlockPos blockPos, BushFeatureConfig bushFeatureConfig) {
+	public boolean generate(IWorld world, ChunkGenerator<? extends ChunkGeneratorConfig> chunkGenerator, Random random, BlockPos blockPos, SingleStateFeatureConfig singleStateFeatureConfig) {
 		ArrayList<BlockPos> placedPositions = new ArrayList<>();
 		
 		while (blockPos.getY() > 5 && world.isAir(blockPos)) {
@@ -88,7 +88,7 @@ public class HoneyPoolFeature extends LakeFeature {
 									return false;
 								}
 								
-								if (y < 4 && !material.isSolid() && world.getBlockState(blockPos.add(dfz, y, z)) != bushFeatureConfig.state) {
+								if (y < 4 && !material.isSolid() && world.getBlockState(blockPos.add(dfz, y, z)) != singleStateFeatureConfig.state) {
 									return false;
 								}
 							}
@@ -101,7 +101,7 @@ public class HoneyPoolFeature extends LakeFeature {
 						for (y = 0; y < 8; ++y) {
 							if (bls[(dfz * 16 + z) * 8 + y]) {
 								BlockPos placePos = blockPos.add(dfz, y, z);
-								world.setBlockState(placePos, y >= 4 ? CAVE_AIR : bushFeatureConfig.state, 2);
+								world.setBlockState(placePos, y >= 4 ? CAVE_AIR : singleStateFeatureConfig.state, 2);
 								placedPositions.add(new BlockPos(placePos.getX(), placePos.getY(), placePos.getZ()));
 							}
 						}

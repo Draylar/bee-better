@@ -115,12 +115,12 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		}
 		
 		if (harvested) {
-			if (!CampfireBlock.method_23895(world, pos, 5)) {
+			if (!CampfireBlock.isLitCampfireInRange(world, pos, 5)) {
 				if (this.hasBees(world, pos)) {
 					this.angerNearbyBees(world, pos);
 				}
 				
-				this.takeHoneyAndAnger(world, state, pos, player, BeeState.EMERGENCY);
+				this.takeHoney(world, state, pos, player, BeeState.EMERGENCY);
 			} else {
 				this.takeHoney(world, state, pos);
 				
@@ -227,7 +227,7 @@ public abstract class ModdedBeehiveBlock extends Block implements BlockEntityPro
 		}
 	}
 	
-	public void takeHoneyAndAnger(World world, BlockState blockState, BlockPos blockPos, PlayerEntity playerEntity, BeeState beeState) {
+	public void takeHoney(World world, BlockState blockState, BlockPos blockPos, PlayerEntity playerEntity, BeeState beeState) {
 		takeHoney(world, blockState, blockPos);
 		BlockEntity blockEntity = world.getBlockEntity(blockPos);
 		

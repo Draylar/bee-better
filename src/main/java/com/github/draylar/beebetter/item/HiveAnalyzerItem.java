@@ -1,8 +1,8 @@
 package com.github.draylar.beebetter.item;
 
-import net.minecraft.block.BeeHiveBlock;
+import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BeeHiveBlockEntity;
+import net.minecraft.block.entity.BeehiveBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
@@ -33,10 +33,10 @@ public class HiveAnalyzerItem extends Item {
 				boolean fullOfBees;
 				int honey;
 				boolean fullOfHoney;
-				if(state.getBlock() instanceof BeeHiveBlock) {
-					BeeHiveBlockEntity be = (BeeHiveBlockEntity) world.getBlockEntity(pos);
+				if(state.getBlock() instanceof BeehiveBlock) {
+					BeehiveBlockEntity be = (BeehiveBlockEntity) world.getBlockEntity(pos);
 					bees = be.getBees().size();
-					honey = state.get(BeeHiveBlock.HONEY_LEVEL);
+					honey = state.get(BeehiveBlock.HONEY_LEVEL);
 					fullOfBees = be.isFullOfBees();
 					fullOfHoney = honey == 5;
 				} else if(state.getBlock() instanceof ModdedBeehiveBlock) {

@@ -1,5 +1,6 @@
 package com.github.draylar.beebetter.registry;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.village.PointOfInterestType;
 
 import com.github.draylar.beebetter.mixin.PointOfInterestTypeAccessor;
@@ -10,7 +11,7 @@ import java.util.Set;
 
 public class BeePOI {
 	
-	public static final Set HIVE_STATES = ImmutableList.of(BeeBlocks.APIARY, BeeBlocks.SPRUCE_BEEHIVE, BeeBlocks.BIRCH_BEEHIVE, BeeBlocks.JUNGLE_BEEHIVE, BeeBlocks.ACACIA_BEEHIVE, BeeBlocks.DARK_OAK_BEEHIVE, BeeBlocks.BEE_BRICKS).stream().flatMap((block) -> block.getStateManager().getStates().stream()).collect(ImmutableSet.toImmutableSet());
+	public static final Set<BlockState> HIVE_STATES = ImmutableList.of(BeeBlocks.APIARY, BeeBlocks.SPRUCE_BEEHIVE, BeeBlocks.BIRCH_BEEHIVE, BeeBlocks.JUNGLE_BEEHIVE, BeeBlocks.ACACIA_BEEHIVE, BeeBlocks.DARK_OAK_BEEHIVE, BeeBlocks.BEE_BRICKS).stream().flatMap((block) -> block.getStateManager().getStates().stream()).collect(ImmutableSet.toImmutableSet());
 	public static final PointOfInterestType MODDED_BEEHIVES =
 			PointOfInterestTypeAccessor.invokeRegister(
 					"modded_beehive",

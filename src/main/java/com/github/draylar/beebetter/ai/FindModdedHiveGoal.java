@@ -1,6 +1,6 @@
 package com.github.draylar.beebetter.ai;
 
-import net.minecraft.block.entity.BeeHiveBlockEntity;
+import net.minecraft.block.entity.BeehiveBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.entity.passive.BeeEntity;
@@ -37,7 +37,7 @@ public class FindModdedHiveGoal extends NotAngryGoal {
 		Stream<BlockPos> stream = this.method_23742(20);
 		Optional<BlockPos> optional = stream.filter((blockPos) -> {
 			BlockEntity blockEntity = this.getBee().world.getBlockEntity(blockPos);
-			if ((blockEntity instanceof BeeHiveBlockEntity && !((BeeHiveBlockEntity) blockEntity).isFullOfBees()) || (blockEntity instanceof ModdedBeehiveBlockEntity && !((ModdedBeehiveBlockEntity) blockEntity).isFullOfBees())) {
+			if ((blockEntity instanceof BeehiveBlockEntity && !((BeehiveBlockEntity) blockEntity).isFullOfBees()) || (blockEntity instanceof ModdedBeehiveBlockEntity && !((ModdedBeehiveBlockEntity) blockEntity).isFullOfBees())) {
 				Path path = this.getBee().getNavigation().findPathTo(blockPos, 20);
 				return path != null;
 			} else {

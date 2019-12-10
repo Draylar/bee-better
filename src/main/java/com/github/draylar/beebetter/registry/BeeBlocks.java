@@ -3,7 +3,7 @@ package com.github.draylar.beebetter.registry;
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
 import net.fabricmc.loader.api.FabricLoader;
 
-import net.minecraft.block.BeeHiveBlock;
+import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FireBlock;
@@ -76,34 +76,34 @@ public class BeeBlocks {
 	public static final Block RED_CANDLE = register("red_candle", new DyedCandleBlock(FabricBlockSettings.copy(CANDLE).build(), DyeColor.RED));
 	public static final Block BLACK_CANDLE = register("black_candle", new DyedCandleBlock(FabricBlockSettings.copy(CANDLE).build(), DyeColor.BLACK));
 	
-	public static final Block SPRUCE_BEEHIVE = register("spruce_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SPRUCE).build()));
-	public static final Block BIRCH_BEEHIVE = register("birch_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SAND).build()));
-	public static final Block JUNGLE_BEEHIVE = register("jungle_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.DIRT).build()));
-	public static final Block ACACIA_BEEHIVE = register("acacia_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.ORANGE).build()));
-	public static final Block DARK_OAK_BEEHIVE = register("dark_oak_beehive", new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build()));
+	public static final Block SPRUCE_BEEHIVE = register("spruce_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SPRUCE).build()));
+	public static final Block BIRCH_BEEHIVE = register("birch_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SAND).build()));
+	public static final Block JUNGLE_BEEHIVE = register("jungle_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.DIRT).build()));
+	public static final Block ACACIA_BEEHIVE = register("acacia_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.ORANGE).build()));
+	public static final Block DARK_OAK_BEEHIVE = register("dark_oak_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build()));
 	public static final Block BEE_BRICKS = register("bee_bricks", new BeeBrickBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
 	
 	// Luminiferous Uplands
-	public static Block SKYROOT_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.RED).build());
+	public static Block SKYROOT_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.RED).build());
 	
 	// Tech Reborn
-	public static Block RUBBER_BEEHIVE_TR = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
+	public static Block RUBBER_BEEHIVE_TR = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
 	
 	// Terrestria
-	public static Block CYPRESS_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.LIGHT_GRAY).build());
-	public static Block HEMLOCK_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
-	public static Block JAPANESE_MAPLE_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.MAGENTA_TERRACOTTA).build());
-	public static Block RAINBOW_EUCALYPTUS_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.LAPIS).build());
-	public static Block REDWOOD_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
-	public static Block RUBBER_BEEHIVE_TERRESTRIA = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SAND).build());
-	public static Block SAKURA_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build());
-	public static Block WILLOW_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.GRAY).build());
+	public static Block CYPRESS_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.LIGHT_GRAY).build());
+	public static Block HEMLOCK_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
+	public static Block JAPANESE_MAPLE_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.MAGENTA_TERRACOTTA).build());
+	public static Block RAINBOW_EUCALYPTUS_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.LAPIS).build());
+	public static Block REDWOOD_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
+	public static Block RUBBER_BEEHIVE_TERRESTRIA = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SAND).build());
+	public static Block SAKURA_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build());
+	public static Block WILLOW_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.GRAY).build());
 	
 	// The Hallow
-	public static Block DEADWOOD_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.PURPLE).build());
+	public static Block DEADWOOD_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.PURPLE).build());
 	
 	// Traverse
-	public static Block FIR_BEEHIVE = new BeeHiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
+	public static Block FIR_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
 	
 	private BeeBlocks() {
 		// NO-OP

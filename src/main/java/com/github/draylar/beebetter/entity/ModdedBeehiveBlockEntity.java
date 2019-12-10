@@ -85,7 +85,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 				if (entity instanceof BeeEntity) {
 					BeeEntity beeEntity = (BeeEntity) entity;
 					if (playerEntity.getPos().squaredDistanceTo(entity.getPos()) <= 16.0D) {
-						if (!this.method_23904()) {
+						if (!this.isSmoked()) {
 							beeEntity.setBeeAttacker(playerEntity);
 						} else {
 							beeEntity.setCannotEnterHiveTicks(400);
@@ -113,8 +113,8 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 	
 	public abstract int getHoneyLevel(BlockState blockState);
 	
-	public boolean method_23904() {
-		return CampfireBlock.method_23895(this.world, this.getPos(), 5);
+	public boolean isSmoked() {
+		return CampfireBlock.isLitCampfireInRange(this.world, this.getPos(), 5);
 	}
 	
 	public void tryEnterHive(Entity entity, boolean hasNectar, int ticksInHive) {
