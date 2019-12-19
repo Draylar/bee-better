@@ -105,6 +105,9 @@ public class BeeBlocks {
 	// Traverse
 	public static Block FIR_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
 	
+	// Blockus
+	public static Block BAMBOO_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
+	
 	private BeeBlocks() {
 		// NO-OP
 	}
@@ -172,6 +175,12 @@ public class BeeBlocks {
 			BeeBetter.log("Traverse detected, adding Fir Beehive");
 			FIR_BEEHIVE = register("fir_beehive", FIR_BEEHIVE);
 			setFlammable(5, 20, FIR_BEEHIVE);
+		}
+		
+		if(loader.isModLoaded("blockus")) {
+			BeeBetter.log("Blockus detected, adding Bamboo Beehive");
+			BAMBOO_BEEHIVE = register("bamboo_beehive", BAMBOO_BEEHIVE);
+			setFlammable(5, 20, BAMBOO_BEEHIVE);
 		}
 	}
 }

@@ -46,6 +46,12 @@
         "values": [
           "beebetter:fir_beehive"
         ]
+      },
+      {
+        "when": [{ "libcd:mod_loaded": "blockus" }],
+        "values": [
+          "beebetter:bamboo_beehive"
+        ]
       }
     ]
   }

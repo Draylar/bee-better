@@ -2,6 +2,7 @@ package com.github.draylar.beebetter.item;
 
 import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BeehiveBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -35,6 +36,15 @@ public class HiveAnalyzerItem extends Item {
 				boolean fullOfHoney;
 				if(state.getBlock() instanceof BeehiveBlock) {
 					BeehiveBlockEntity be = (BeehiveBlockEntity) world.getBlockEntity(pos);
+					if(!be.isSmoked() && !be.hasNoBees()) {
+						player.sendMessage(new TranslatableText("text."+BeeBetter.MODID+".restless_bees"));
+						player.getItemCooldownManager().set(this, 20);
+						return ActionResult.SUCCESS;
+					} else if(state.getBlock().equals(Blocks.BEE_NEST)) {
+						player.sendMessage(new TranslatableText("text."+BeeBetter.MODID+".wild_nest"));
+						player.getItemCooldownManager().set(this, 20);
+						return ActionResult.SUCCESS;
+					}
 					bees = be.getBees().size();
 					honey = state.get(BeehiveBlock.HONEY_LEVEL);
 					fullOfBees = be.isFullOfBees();
@@ -42,6 +52,11 @@ public class HiveAnalyzerItem extends Item {
 				} else if(state.getBlock() instanceof ModdedBeehiveBlock) {
 					ModdedBeehiveBlock block = (ModdedBeehiveBlock) state.getBlock();
 					ModdedBeehiveBlockEntity be = (ModdedBeehiveBlockEntity) world.getBlockEntity(pos);
+					if(!be.isSmoked() && !be.hasNoBees()) {
+						player.sendMessage(new TranslatableText("text."+BeeBetter.MODID+".restless_bees"));
+						player.getItemCooldownManager().set(this, 20);
+						return ActionResult.SUCCESS;
+					}
 					bees = be.getBeeCount();
 					honey = state.get(block.getHoneyProperty());
 					fullOfBees = be.isFullOfBees();

@@ -78,9 +78,13 @@
   "block.beebetter.deadwood_beehive": "Deadwood Beehive",
   
   "block.beebetter.fir_beehive": "Fir Beehive",
+  
+  "block.beebetter.bamboo_beehive": "Bamboo Beehive",
 
   "itemGroup.beebetter.group": "Bee Better",
   
+  "text.beebetter.wild_nest": "It's too difficult to analyze this wild Nest. Perhaps if you constructed a Hive yourself?",
+  "text.beebetter.restless_bees": "There's at least one Bee inside, but they seem restless. Maybe some smoke could calm them?",
   "text.beebetter.no_bees_inside": "It doesn't seem like there are any Bees inside.",
   "text.beebetter.one_bee_inside": "There seems to be a single Bee inside.",
   "text.beebetter.filled_with_bees_inside": "It seems to be absolutely buzzing with Bees inside.",
