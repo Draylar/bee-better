@@ -52,6 +52,12 @@
         "values": [
           "beebetter:bamboo_beehive"
         ]
+      },
+      {
+        "when": [{ "libcd:mod_loaded": "bv" }],
+        "values": [
+          "beebetter:shadow_beehive"
+        ]
       }
     ]
   }

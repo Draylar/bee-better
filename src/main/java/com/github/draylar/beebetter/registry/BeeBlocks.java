@@ -108,6 +108,9 @@ public class BeeBlocks {
 	// Blockus
 	public static Block BAMBOO_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
 	
+	// Beyond Vanilla
+	public static Block SHADOW_BEEHIVE = new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.WOOD).build());
+	
 	private BeeBlocks() {
 		// NO-OP
 	}
@@ -181,6 +184,12 @@ public class BeeBlocks {
 			BeeBetter.log("Blockus detected, adding Bamboo Beehive");
 			BAMBOO_BEEHIVE = register("bamboo_beehive", BAMBOO_BEEHIVE);
 			setFlammable(5, 20, BAMBOO_BEEHIVE);
+		}
+		
+		if(loader.isModLoaded("bv")) {
+			BeeBetter.log("Beyond Vanilla detected, adding Shadow Beehive");
+			SHADOW_BEEHIVE = register("shadow_beehive", SHADOW_BEEHIVE);
+			setFlammable(5, 20, SHADOW_BEEHIVE);
 		}
 	}
 }
