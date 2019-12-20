@@ -22,7 +22,11 @@ import com.github.draylar.beebetter.block.CandleBlock;
 import com.github.draylar.beebetter.block.DyedCandleBlock;
 import com.github.draylar.beebetter.honey.HoneyFluidBlock;
 
+import java.util.ArrayList;
+
 public class BeeBlocks {
+	
+	public static final ArrayList<Block> WOODEN_BEEHIVES = new ArrayList<>();
 	
 	public static final Block HONEY_FLUID = register("honey", new HoneyFluidBlock(FabricBlockSettings.of(Material.WATER).noCollision().strength(100.0F, 100f).dropsNothing().build()), (BlockItem) null);
 	
@@ -56,8 +60,6 @@ public class BeeBlocks {
 	public static final Block ROOF_BEESWAX_TILES = register("roof_beeswax_tiles", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
 	public static final Block TINY_BEESWAX_BRICKS = register("tiny_beeswax_bricks", new Block(FabricBlockSettings.copy(Blocks.CLAY).sounds(BlockSoundGroup.SNOW).build()));
 	
-	public static final Block APIARY = register("apiary", new ApiaryBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).build()));
-	
 	public static final Block CANDLE = register("candle", new CandleBlock(FabricBlockSettings.copy(Blocks.TORCH).sounds(BlockSoundGroup.SNOW).build()));
 	public static final Block WHITE_CANDLE = register("white_candle", new DyedCandleBlock(FabricBlockSettings.copy(CANDLE).build(), DyeColor.WHITE));
 	public static final Block ORANGE_CANDLE = register("orange_candle", new DyedCandleBlock(FabricBlockSettings.copy(CANDLE).build(), DyeColor.ORANGE));
@@ -76,11 +78,14 @@ public class BeeBlocks {
 	public static final Block RED_CANDLE = register("red_candle", new DyedCandleBlock(FabricBlockSettings.copy(CANDLE).build(), DyeColor.RED));
 	public static final Block BLACK_CANDLE = register("black_candle", new DyedCandleBlock(FabricBlockSettings.copy(CANDLE).build(), DyeColor.BLACK));
 	
-	public static final Block SPRUCE_BEEHIVE = register("spruce_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SPRUCE).build()));
-	public static final Block BIRCH_BEEHIVE = register("birch_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SAND).build()));
-	public static final Block JUNGLE_BEEHIVE = register("jungle_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.DIRT).build()));
-	public static final Block ACACIA_BEEHIVE = register("acacia_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.ORANGE).build()));
-	public static final Block DARK_OAK_BEEHIVE = register("dark_oak_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build()));
+	public static final Block APIARY = register("apiary", new ApiaryBlock(FabricBlockSettings.copy(Blocks.IRON_BLOCK).build()));
+	
+	public static final Block SPRUCE_BEEHIVE = registerWoodenHive("spruce_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SPRUCE).build()));
+	public static final Block BIRCH_BEEHIVE = registerWoodenHive("birch_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.SAND).build()));
+	public static final Block JUNGLE_BEEHIVE = registerWoodenHive("jungle_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.DIRT).build()));
+	public static final Block ACACIA_BEEHIVE = registerWoodenHive("acacia_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.ORANGE).build()));
+	public static final Block DARK_OAK_BEEHIVE = registerWoodenHive("dark_oak_beehive", new BeehiveBlock(FabricBlockSettings.copy(Blocks.BEEHIVE).materialColor(MaterialColor.BROWN).build()));
+	
 	public static final Block BEE_BRICKS = register("bee_bricks", new BeeBrickBlock(FabricBlockSettings.copy(Blocks.BRICKS).build()));
 	
 	// Luminiferous Uplands
@@ -115,6 +120,12 @@ public class BeeBlocks {
 		// NO-OP
 	}
 	
+	static <T extends Block> T registerWoodenHive(String name, T block) {
+		T b = register(name, block);
+		WOODEN_BEEHIVES.add(b);
+		return b;
+	}
+	
 	static <T extends Block> T register(String name, T block, Item.Settings settings) {
 		return register(name, block, new BlockItem(block, settings));
 	}
@@ -139,57 +150,50 @@ public class BeeBlocks {
 	}
 	
 	public static void init() {
-		setFlammable(5, 20, SPRUCE_BEEHIVE, BIRCH_BEEHIVE, JUNGLE_BEEHIVE, ACACIA_BEEHIVE, DARK_OAK_BEEHIVE);
-		
 		FabricLoader loader = FabricLoader.getInstance();
 		
 		if(loader.isModLoaded("luminiferous_uplands")) {
 			BeeBetter.log("Luminiferous Uplands detected, adding Skyroot Beehive");
-			SKYROOT_BEEHIVE = register("skyroot_beehive", SKYROOT_BEEHIVE);
-			setFlammable(5, 20, SKYROOT_BEEHIVE);
+			SKYROOT_BEEHIVE = registerWoodenHive("skyroot_beehive", SKYROOT_BEEHIVE);
 		}
 		
 		if(loader.isModLoaded("techreborn")) {
 			BeeBetter.log("Tech Reborn detected, adding Rubber Beehive");
-			RUBBER_BEEHIVE_TR = register("rubber_beehive_tr", RUBBER_BEEHIVE_TR);
-			setFlammable(5, 20, RUBBER_BEEHIVE_TR);
+			RUBBER_BEEHIVE_TR = registerWoodenHive("rubber_beehive_tr", RUBBER_BEEHIVE_TR);
 		}
 		
 		if(loader.isModLoaded("terrestria")) {
 			BeeBetter.log("Terrestria detected, adding extra Beehives");
-			CYPRESS_BEEHIVE = register("cypress_beehive", CYPRESS_BEEHIVE);
-			HEMLOCK_BEEHIVE = register("hemlock_beehive", HEMLOCK_BEEHIVE);
-			JAPANESE_MAPLE_BEEHIVE = register("japanese_maple_beehive", JAPANESE_MAPLE_BEEHIVE);
-			RAINBOW_EUCALYPTUS_BEEHIVE = register("rainbow_eucalyptus_beehive", RAINBOW_EUCALYPTUS_BEEHIVE);
-			REDWOOD_BEEHIVE = register("redwood_beehive", REDWOOD_BEEHIVE);
-			RUBBER_BEEHIVE_TERRESTRIA = register("rubber_beehive_terrestria", RUBBER_BEEHIVE_TERRESTRIA);
-			SAKURA_BEEHIVE = register("sakura_beehive", SAKURA_BEEHIVE);
-			WILLOW_BEEHIVE = register("willow_beehive", WILLOW_BEEHIVE);
-			setFlammable(5, 20, CYPRESS_BEEHIVE, HEMLOCK_BEEHIVE, JAPANESE_MAPLE_BEEHIVE, RAINBOW_EUCALYPTUS_BEEHIVE, REDWOOD_BEEHIVE, RUBBER_BEEHIVE_TERRESTRIA, SAKURA_BEEHIVE, WILLOW_BEEHIVE);
+			CYPRESS_BEEHIVE = registerWoodenHive("cypress_beehive", CYPRESS_BEEHIVE);
+			HEMLOCK_BEEHIVE = registerWoodenHive("hemlock_beehive", HEMLOCK_BEEHIVE);
+			JAPANESE_MAPLE_BEEHIVE = registerWoodenHive("japanese_maple_beehive", JAPANESE_MAPLE_BEEHIVE);
+			RAINBOW_EUCALYPTUS_BEEHIVE = registerWoodenHive("rainbow_eucalyptus_beehive", RAINBOW_EUCALYPTUS_BEEHIVE);
+			REDWOOD_BEEHIVE = registerWoodenHive("redwood_beehive", REDWOOD_BEEHIVE);
+			RUBBER_BEEHIVE_TERRESTRIA = registerWoodenHive("rubber_beehive_terrestria", RUBBER_BEEHIVE_TERRESTRIA);
+			SAKURA_BEEHIVE = registerWoodenHive("sakura_beehive", SAKURA_BEEHIVE);
+			WILLOW_BEEHIVE = registerWoodenHive("willow_beehive", WILLOW_BEEHIVE);
 		}
 		
 		if(loader.isModLoaded("thehallow")) {
 			BeeBetter.log("The Hallow detected, adding Deadwood Beehive");
-			DEADWOOD_BEEHIVE = register("deadwood_beehive", DEADWOOD_BEEHIVE);
-			setFlammable(5, 20, DEADWOOD_BEEHIVE);
+			DEADWOOD_BEEHIVE = registerWoodenHive("deadwood_beehive", DEADWOOD_BEEHIVE);
 		}
 		
 		if(loader.isModLoaded("traverse")) {
 			BeeBetter.log("Traverse detected, adding Fir Beehive");
-			FIR_BEEHIVE = register("fir_beehive", FIR_BEEHIVE);
-			setFlammable(5, 20, FIR_BEEHIVE);
+			FIR_BEEHIVE = registerWoodenHive("fir_beehive", FIR_BEEHIVE);
 		}
 		
 		if(loader.isModLoaded("blockus")) {
 			BeeBetter.log("Blockus detected, adding Bamboo Beehive");
-			BAMBOO_BEEHIVE = register("bamboo_beehive", BAMBOO_BEEHIVE);
-			setFlammable(5, 20, BAMBOO_BEEHIVE);
+			BAMBOO_BEEHIVE = registerWoodenHive("bamboo_beehive", BAMBOO_BEEHIVE);
 		}
 		
 		if(loader.isModLoaded("bv")) {
 			BeeBetter.log("Beyond Vanilla detected, adding Shadow Beehive");
-			SHADOW_BEEHIVE = register("shadow_beehive", SHADOW_BEEHIVE);
-			setFlammable(5, 20, SHADOW_BEEHIVE);
+			SHADOW_BEEHIVE = registerWoodenHive("shadow_beehive", SHADOW_BEEHIVE);
 		}
+		
+		setFlammable(5, 20, WOODEN_BEEHIVES.toArray(new Block[0]));
 	}
 }
