@@ -62,7 +62,7 @@ public abstract class HoneyFluid extends BaseFluid {
 	}
 	
 	@Override
-	protected boolean method_15777(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
+	protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
 		return direction == Direction.DOWN && !fluid.matches(FluidTags.WATER);
 	}
 	

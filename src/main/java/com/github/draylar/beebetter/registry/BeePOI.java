@@ -1,7 +1,7 @@
 package com.github.draylar.beebetter.registry;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.village.PointOfInterestType;
+import net.minecraft.world.poi.PointOfInterestType;
 
 import com.github.draylar.beebetter.mixin.PointOfInterestTypeAccessor;
 

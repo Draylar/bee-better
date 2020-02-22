@@ -145,7 +145,7 @@ public class BeeBlocks {
 	
 	protected static void setFlammable(int burnChance, int spreadChance, Block... blocks) {
 		for (Block block:blocks) {
-			((FireBlock)Blocks.FIRE).registerFlammableBlock(block, burnChance, spreadChance);
+//			((FireBlock)Blocks.FIRE).registerFlammableBlock(block, burnChance, spreadChance); // TODO fix this aaa
 		}
 	}
 	

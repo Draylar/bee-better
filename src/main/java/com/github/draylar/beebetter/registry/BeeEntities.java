@@ -18,7 +18,7 @@ public class BeeEntities {
 	}
 	
 	private static <T extends BlockEntity> BlockEntityType<T> register(String name, BlockEntityType<T> build) {
-		return Registry.register(Registry.BLOCK_ENTITY, BeeBetter.id(name), build);
+		return Registry.register(Registry.BLOCK_ENTITY_TYPE, BeeBetter.id(name), build);
 	}
 	
 	public static void init() {
