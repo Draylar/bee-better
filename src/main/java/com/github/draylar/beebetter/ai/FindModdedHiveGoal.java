@@ -6,8 +6,8 @@ import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.entity.passive.BeeEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.village.PointOfInterest;
-import net.minecraft.village.PointOfInterestStorage;
+import net.minecraft.world.poi.PointOfInterest;
+import net.minecraft.world.poi.PointOfInterestStorage;
 
 import com.github.draylar.beebetter.entity.ModdedBeehiveBlockEntity;
 import com.github.draylar.beebetter.registry.BeePOI;

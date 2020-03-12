@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.village.PointOfInterestType;
+import net.minecraft.world.poi.PointOfInterestType;
 
 import java.util.Set;
 

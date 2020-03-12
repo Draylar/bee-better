@@ -162,7 +162,7 @@ public abstract class ModdedBeehiveBlockEntity extends BlockEntity implements Ti
 					double spawnX = (double) pos.getX() + 0.5D + entitySize * (double) direction.getOffsetX();
 					double spawnY = (double) pos.getY() + 0.5D - (double) (entity.getHeight() / 2.0F);
 					double spawnZ = (double) pos.getZ() + 0.5D + entitySize * (double) direction.getOffsetZ();
-					entity.setPositionAndAngles(spawnX, spawnY, spawnZ, entity.yaw, entity.pitch);
+					entity.refreshPositionAndAngles(spawnX, spawnY, spawnZ, entity.yaw, entity.pitch);
 					
 					if (!entity.getType().isTaggedWith(EntityTypeTags.BEEHIVE_INHABITORS)) {
 						return false;

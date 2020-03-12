@@ -1,6 +1,7 @@
 package com.github.draylar.beebetter.registry;
 
 import net.fabricmc.fabric.api.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 
 import net.minecraft.block.BeehiveBlock;
@@ -145,7 +146,7 @@ public class BeeBlocks {
 	
 	protected static void setFlammable(int burnChance, int spreadChance, Block... blocks) {
 		for (Block block:blocks) {
-			((FireBlock)Blocks.FIRE).registerFlammableBlock(block, burnChance, spreadChance);
+            FlammableBlockRegistry.getDefaultInstance().add(block, burnChance, spreadChance);
 		}
 	}
 	
