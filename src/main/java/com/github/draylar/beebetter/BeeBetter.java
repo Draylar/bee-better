@@ -41,7 +41,7 @@ public class BeeBetter implements ModInitializer {
 		BeePOI.init();
 		BeeWorld.init();
 		
-		// shitty hack but it's infinitely easier than mixin-ing into this
+		// hack but it's infinitely easier than mixin-ing into this
 		DispenserBlock.registerBehavior(Items.GLASS_BOTTLE.asItem(), new GlassBottleDispenserBehavior());
 		DispenserBlock.registerBehavior(Items.SHEARS.asItem(), new ShearsDispenserBehavior());
 	}
