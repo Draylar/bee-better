@@ -1,6 +1,8 @@
 package com.github.draylar.beebetter;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -13,6 +15,7 @@ import com.github.draylar.beebetter.client.FluidResourceLoader;
 import com.github.draylar.beebetter.registry.BeeBlocks;
 import com.github.draylar.beebetter.registry.BeeFluids;
 
+@Environment(EnvType.CLIENT)
 public class BeeBetterClient implements ClientModInitializer {
 	
 	@Override
