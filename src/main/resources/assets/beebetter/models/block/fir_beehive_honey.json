@@ -1,10 +1,10 @@
 {
-    "parent": "block/orientable_with_bottom",
-    "textures": {
-        "particle": "beebetter:block/traverse/fir_beehive_side",
-        "bottom": "beebetter:block/traverse/fir_beehive_end",
-        "top": "beebetter:block/traverse/fir_beehive_end",
-        "front": "beebetter:block/traverse/fir_beehive_front_honey",
-        "side": "beebetter:block/traverse/fir_beehive_side"
-    }
+  "parent": "block/orientable_with_bottom",
+  "textures": {
+    "particle": "beebetter:block/traverse/fir_beehive_side",
+    "bottom": "beebetter:block/traverse/fir_beehive_end",
+    "top": "beebetter:block/traverse/fir_beehive_end",
+    "front": "beebetter:block/traverse/fir_beehive_front_honey",
+    "side": "beebetter:block/traverse/fir_beehive_side"
+  }
 }

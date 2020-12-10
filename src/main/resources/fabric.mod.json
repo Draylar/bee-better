@@ -1,9 +1,7 @@
-
 {
   "schemaVersion": 1,
   "id": "beebetter",
   "version": "${version}",
-
   "name": "Bee Better",
   "description": "Simple mod that focuses on improving bees!",
   "authors": [
@@ -17,10 +15,8 @@
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/better-bees",
     "sources": "https://github.com/Draylar/better-bees"
   },
-
   "license": "MIT",
   "icon": "assets/beebetter/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -33,7 +29,6 @@
   "mixins": [
     "beebetter.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.4.0",
     "fabric": "*"

@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.2.6-SNAPSHOT'
+	id 'fabric-loom' version '0.5-SNAPSHOT'
 }
 
 sourceCompatibility = 1.8
@@ -23,17 +23,17 @@ repositories {
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.minecraft_version}+build.${project.yarn_build}"
-	modApi "net.fabricmc:fabric-loader:${project.loader_version}"
-	modApi "net.fabricmc.fabric-api:fabric-api:${project.api_version}"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.api_version}"
 
 	modImplementation "io.github.cottonmc:LibCD:${project.libcd_version}"
 	include "io.github.cottonmc:LibCD:${project.libcd_version}"
 
-	modCompile "io.github.prospector:modmenu:${project.mod_menu_version}"
-	modCompile ("me.shedaniel:RoughlyEnoughItems:${project.rei_version}") { exclude(module: "ModMenu") }
+	modImplementation "io.github.prospector:modmenu:${project.mod_menu_version}"
+	modImplementation ("me.shedaniel:RoughlyEnoughItems:${project.rei_version}") { exclude(module: "ModMenu") }
 
-	modCompile "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
-	modCompile "me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}"
+	modImplementation "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
+	modImplementation "me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}"
 	include "me.shedaniel.cloth:config-2:${project.cloth_config_version}"
 	include "me.sargunvohra.mcmods:autoconfig1u:${project.auto_config_version}"
 }

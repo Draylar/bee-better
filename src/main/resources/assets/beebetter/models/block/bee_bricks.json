@@ -1,10 +1,10 @@
 {
-    "parent": "block/orientable_with_bottom",
-    "textures": {
-        "particle": "block/bricks",
-        "bottom": "block/bricks",
-        "top": "block/bricks",
-        "front": "beebetter:block/bee_bricks_front",
-        "side": "block/bricks"
-    }
+  "parent": "block/orientable_with_bottom",
+  "textures": {
+    "particle": "block/bricks",
+    "bottom": "block/bricks",
+    "top": "block/bricks",
+    "front": "beebetter:block/bee_bricks_front",
+    "side": "block/bricks"
+  }
 }

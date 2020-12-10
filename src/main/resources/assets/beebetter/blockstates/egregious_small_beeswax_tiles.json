@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "beebetter:block/beeswax/egregious_small_beeswax_tiles" }
+    "": {
+      "model": "beebetter:block/beeswax/egregious_small_beeswax_tiles"
+    }
   }
 }

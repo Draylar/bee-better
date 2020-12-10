@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "beebetter:block/beeswax/polished_beeswax" }
+    "": {
+      "model": "beebetter:block/beeswax/polished_beeswax"
+    }
   }
 }

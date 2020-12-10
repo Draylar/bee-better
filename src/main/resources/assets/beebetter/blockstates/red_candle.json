@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"": { "model": "beebetter:block/red_candle" }
-	}
+  "variants": {
+    "": {
+      "model": "beebetter:block/red_candle"
+    }
+  }
 }

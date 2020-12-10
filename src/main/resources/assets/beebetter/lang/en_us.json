@@ -4,7 +4,6 @@
   "item.beebetter.compressed_beeswax": "Compressed Beeswax",
   "item.beebetter.bee_stinger": "Bee Stinger",
   "item.beebetter.hive_analyzer": "Hive Analyzer",
-
   "block.beebetter.beeswax": "Beeswax Block",
   "block.beebetter.ancient_beeswax_bricks": "Ancient Beeswax Bricks",
   "block.beebetter.ancient_crumbling_beeswax": "Ancient Crumbling Beeswax",
@@ -34,7 +33,6 @@
   "block.beebetter.polished_beeswax_slabs": "Polished Beeswax Slabs",
   "block.beebetter.roof_beeswax_tiles": "Roof Beeswax Tiles",
   "block.beebetter.tiny_beeswax_bricks": "Tiny Beeswax Bricks",
-  
   "block.beebetter.candle": "Candle",
   "block.beebetter.white_candle": "White Candle",
   "block.beebetter.orange_candle": "Orange Candle",
@@ -52,20 +50,15 @@
   "block.beebetter.green_candle": "Green Candle",
   "block.beebetter.red_candle": "Red Candle",
   "block.beebetter.black_candle": "Black Candle",
-  
   "block.beebetter.apiary": "Apiary",
-  
   "block.beebetter.spruce_beehive": "Spruce Beehive",
   "block.beebetter.birch_beehive": "Birch Beehive",
   "block.beebetter.jungle_beehive": "Jungle Beehive",
   "block.beebetter.acacia_beehive": "Acacia Beehive",
   "block.beebetter.dark_oak_beehive": "Dark Oak Beehive",
   "block.beebetter.bee_bricks": "Bee Bricks",
-  
   "block.beebetter.skyroot_beehive": "Skyroot Beehive",
-  
   "block.beebetter.rubber_beehive_tr": "Rubber Wood Beehive",
-  
   "block.beebetter.cypress_beehive": "Cypress Beehive",
   "block.beebetter.hemlock_beehive": "Hemlock Beehive",
   "block.beebetter.japanese_maple_beehive": "Japanese Maple Beehive",
@@ -74,17 +67,11 @@
   "block.beebetter.rubber_beehive_terrestria": "Rubber Wood Beehive",
   "block.beebetter.sakura_beehive": "Sakura Beehive",
   "block.beebetter.willow_beehive": "Willow Beehive",
-  
   "block.beebetter.deadwood_beehive": "Deadwood Beehive",
-  
   "block.beebetter.fir_beehive": "Fir Beehive",
-  
   "block.beebetter.bamboo_beehive": "Bamboo Beehive",
-  
   "block.beebetter.shadow_beehive": "Shadow Beehive",
-
   "itemGroup.beebetter.group": "Bee Better",
-  
   "text.beebetter.wild_nest": "It's too difficult to analyze this wild Nest. Perhaps if you constructed a Hive yourself?",
   "text.beebetter.restless_bees": "There's at least one Bee inside, but they seem restless. Maybe some smoke could calm them?",
   "text.beebetter.no_bees_inside": "It doesn't seem like there are any Bees inside.",
@@ -96,6 +83,5 @@
   "text.beebetter.almost_enough_honey_inside": "There seems to be almost enough Honey to fill a Bottle.",
   "text.beebetter.enough_honey_inside": "There's enough Honey to fill a Bottle, but it seems the Hive can hold more.",
   "text.beebetter.some_honey_inside": "There seems to be a little bit of Honey inside.",
-  
   "block.minecraft.beehive": "Oak Beehive"
 }

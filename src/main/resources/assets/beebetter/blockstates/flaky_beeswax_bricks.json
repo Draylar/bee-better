@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "beebetter:block/beeswax/flaky_beeswax_bricks" }
+    "": {
+      "model": "beebetter:block/beeswax/flaky_beeswax_bricks"
+    }
   }
 }
