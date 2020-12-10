@@ -1,7 +1,7 @@
 {
-	"parent": "beebetter:block/candle",
-	"textures": {
-		"0": "beebetter:block/black_candle",
-		"particle": "beebetter:block/black_candle"
-	}
+  "parent": "beebetter:block/candle",
+  "textures": {
+    "0": "beebetter:block/black_candle",
+    "particle": "beebetter:block/black_candle"
+  }
 }

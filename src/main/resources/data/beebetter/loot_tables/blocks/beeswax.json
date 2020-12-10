@@ -1,66 +1,66 @@
 {
-	"type": "minecraft:block",
-	"pools": [
-		{
-			"rolls": 1,
-			"entries": [
-				{
-					"type": "minecraft:item",
-					"name": "beebetter:beeswax_flake",
-					"functions": [
-						{
-							"function": "minecraft:set_count",
-							"count": {
-								"min": 6.0,
-								"max": 9.0,
-								"type": "minecraft:uniform"
-							}
-						}
-					]
-				}
-			],
-			"conditions": [
-			  {
-			    "condition": "inverted",
-			    "term": {
-			    "condition": "minecraft:match_tool",
-			    "predicate": {
-			      "enchantments": [
-			        {
-			          "enchantment": "minecraft:silk_touch",
-			          "levels": {
-			            "min": 1
-			          }
-			        }
-			      ]
-			    }
-			  }
-			 }
-			]
-		},
-		{
-			"rolls": 1,
-			"entries": [
-				{
-				  "type": "minecraft:item",
-				  "name": "beebetter:beeswax"
-				}
-			],
-			"conditions": [
-			  {
-			    "condition": "minecraft:match_tool",
-			    "predicate": {
-			      "enchantments": [
-			        {
-			          "enchantment": "minecraft:silk_touch",
-			          "levels": {
-			            "min": 1
-			          }
-			        }
-			      ]
-			    }
-			  }
-			]
-		}
-	]
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "beebetter:beeswax_flake",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 6.0,
+                "max": 9.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "inverted",
+          "term": {
+            "condition": "minecraft:match_tool",
+            "predicate": {
+              "enchantments": [
+                {
+                  "enchantment": "minecraft:silk_touch",
+                  "levels": {
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "beebetter:beeswax"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "minecraft:silk_touch",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
 }

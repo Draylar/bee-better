@@ -1,8 +1,7 @@
 {
-	"block.beebetter.antique_chiseled_beeswax": "Antique Chiselled Beeswax",
-	"block.beebetter.chiseled_beeswax": "Chiselled Beeswax",
-	"block.beebetter.chiseled_beeswax_pimple": "Chiselled Beeswax Pimple",
-
-	"block.beebetter.gray_candle": "Grey Candle",
-	"block.beebetter.light_gray_candle": "Light Grey Candle"
+  "block.beebetter.antique_chiseled_beeswax": "Antique Chiselled Beeswax",
+  "block.beebetter.chiseled_beeswax": "Chiselled Beeswax",
+  "block.beebetter.chiseled_beeswax_pimple": "Chiselled Beeswax Pimple",
+  "block.beebetter.gray_candle": "Grey Candle",
+  "block.beebetter.light_gray_candle": "Light Grey Candle"
 }

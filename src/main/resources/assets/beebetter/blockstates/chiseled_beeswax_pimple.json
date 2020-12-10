@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "beebetter:block/beeswax/chiseled_beeswax_pimple" }
+    "": {
+      "model": "beebetter:block/beeswax/chiseled_beeswax_pimple"
+    }
   }
 }

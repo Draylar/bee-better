@@ -1,10 +1,10 @@
 {
-    "parent": "block/orientable_with_bottom",
-    "textures": {
-        "particle": "beebetter:block/thehallow/deadwood_beehive_side",
-        "bottom": "beebetter:block/thehallow/deadwood_beehive_end",
-        "top": "beebetter:block/thehallow/deadwood_beehive_end",
-        "front": "beebetter:block/thehallow/deadwood_beehive_front_honey",
-        "side": "beebetter:block/thehallow/deadwood_beehive_side"
-    }
+  "parent": "block/orientable_with_bottom",
+  "textures": {
+    "particle": "beebetter:block/thehallow/deadwood_beehive_side",
+    "bottom": "beebetter:block/thehallow/deadwood_beehive_end",
+    "top": "beebetter:block/thehallow/deadwood_beehive_end",
+    "front": "beebetter:block/thehallow/deadwood_beehive_front_honey",
+    "side": "beebetter:block/thehallow/deadwood_beehive_side"
+  }
 }

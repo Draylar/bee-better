@@ -11,19 +11,31 @@
   "libcd": {
     "entries": [
       {
-        "when": [{ "libcd:mod_loaded": "luminiferous_uplands" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "luminiferous_uplands"
+          }
+        ],
         "values": [
           "beebetter:skyroot_beehive"
         ]
       },
       {
-        "when": [{ "libcd:mod_loaded": "techreborn" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "techreborn"
+          }
+        ],
         "values": [
           "beebetter:rubber_beehive_tr"
         ]
       },
       {
-        "when": [{ "libcd:mod_loaded": "terrestria" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "terrestria"
+          }
+        ],
         "values": [
           "beebetter:cypress_beehive",
           "beebetter:hemlock_beehive",
@@ -36,25 +48,41 @@
         ]
       },
       {
-        "when": [{ "libcd:mod_loaded": "thehallow" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "thehallow"
+          }
+        ],
         "values": [
           "beebetter:deadwood_beehive"
         ]
       },
       {
-        "when": [{ "libcd:mod_loaded": "traverse" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "traverse"
+          }
+        ],
         "values": [
           "beebetter:fir_beehive"
         ]
       },
       {
-        "when": [{ "libcd:mod_loaded": "blockus" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "blockus"
+          }
+        ],
         "values": [
           "beebetter:bamboo_beehive"
         ]
       },
       {
-        "when": [{ "libcd:mod_loaded": "bv" }],
+        "when": [
+          {
+            "libcd:mod_loaded": "bv"
+          }
+        ],
         "values": [
           "beebetter:shadow_beehive"
         ]
