@@ -1,26 +1,24 @@
 package com.github.draylar.beebetter.registry;
 
-import com.github.draylar.beebetter.BeeBetter;
-import com.github.draylar.beebetter.world.feature.HoneyPoolFeature;
 import com.google.common.collect.ImmutableSet;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.BuiltinRegistries;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.decorator.ChanceDecoratorConfig;
-import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.SingleStateFeatureConfig;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placementmodifier.BiomePlacementModifier;
+import net.minecraft.world.gen.placementmodifier.RarityFilterPlacementModifier;
+import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 import java.util.Set;
 
 public class BeeWorld {
 
-    private static final Feature<SingleStateFeatureConfig> HONEY_POOL = registerFeature("honey_pool", new HoneyPoolFeature(SingleStateFeatureConfig.CODEC));
-    private static final ConfiguredFeature<?, ?> HONEY_POOL_CONF = HONEY_POOL.configure(new SingleStateFeatureConfig(BeeBlocks.HONEY_FLUID.getDefaultState())).decorate(Decorator.WATER_LAKE.configure(new ChanceDecoratorConfig(35)));
+    public static final RegistryEntry<ConfiguredFeature<LakeFeature.Config, ?>> HONEY_POOL = ConfiguredFeatures.register("beebetter:honey_pool", Feature.LAKE, new LakeFeature.Config(BlockStateProvider.of(BeeBlocks.HONEY_FLUID.getDefaultState()), BlockStateProvider.of(Blocks.STONE.getDefaultState())));
+    public static final RegistryEntry<PlacedFeature> HONEY_POOL_SURFACE = PlacedFeatures.register("beebetter:honey_pool_surface", HONEY_POOL, RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, BiomePlacementModifier.of());
     private static final Set<Biome.Category> CAT_BLACKLIST = ImmutableSet.of(
             Biome.Category.NETHER,
             Biome.Category.THEEND
@@ -30,15 +28,7 @@ public class BeeWorld {
         // NO-OP
     }
 
-    private static <F extends FeatureConfig> Feature<F> registerFeature(String name, Feature<F> feature) {
-        return Registry.register(Registry.FEATURE, BeeBetter.id(name), feature);
-    }
-
     public static void init() {
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, BeeBetter.id("honey_pool"), HONEY_POOL_CONF);
-        BiomeModifications.addFeature(ctx -> {
-            Biome.Category cat = ctx.getBiome().getCategory();
-            return !CAT_BLACKLIST.contains(cat);
-        }, GenerationStep.Feature.LOCAL_MODIFICATIONS, BuiltinRegistries.CONFIGURED_FEATURE.getKey(HONEY_POOL_CONF).get());
+        BiomeModifications.addFeature(ctx -> !CAT_BLACKLIST.contains(Biome.getCategory(ctx.getBiomeRegistryEntry())), GenerationStep.Feature.LOCAL_MODIFICATIONS, BuiltinRegistries.PLACED_FEATURE.getKey(HONEY_POOL_SURFACE.comp_349()).get());
     }
 }

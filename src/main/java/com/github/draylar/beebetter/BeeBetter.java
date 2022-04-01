@@ -1,7 +1,6 @@
 package com.github.draylar.beebetter;
 
 import com.github.draylar.beebetter.dispenser.GlassBottleDispenserBehavior;
-import com.github.draylar.beebetter.dispenser.ShearsDispenserBehavior;
 import com.github.draylar.beebetter.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -33,9 +32,10 @@ public class BeeBetter implements ModInitializer {
         BeePOI.init();
         BeeWorld.init();
 
+        System.out.println(BeeBlocks.APIARY);
+
         // hack but it's infinitely easier than mixin-ing into this
         DispenserBlock.registerBehavior(Items.GLASS_BOTTLE.asItem(), new GlassBottleDispenserBehavior());
-        DispenserBlock.registerBehavior(Items.SHEARS.asItem(), new ShearsDispenserBehavior());
     }
 
     public static void log(String log) {

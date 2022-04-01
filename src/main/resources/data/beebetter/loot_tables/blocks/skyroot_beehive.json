@@ -1,4 +1,7 @@
 {
+  "condition": {
+    "modid": "luminiferous_uplands"
+  },
   "type": "minecraft:block",
   "pools": [
     {

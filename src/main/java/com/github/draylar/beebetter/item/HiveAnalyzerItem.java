@@ -17,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class HiveAnalyzerItem extends Item {
+
     public HiveAnalyzerItem(Settings settings) {
         super(settings);
     }

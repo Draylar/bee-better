@@ -1,4 +1,7 @@
 {
+  "condition": {
+    "modid": "terrestria"
+  },
   "type": "minecraft:block",
   "pools": [
     {

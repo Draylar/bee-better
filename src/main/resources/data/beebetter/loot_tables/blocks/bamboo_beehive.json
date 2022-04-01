@@ -1,4 +1,7 @@
 {
+  "condition": {
+    "modid": "blockus"
+  },
   "type": "minecraft:block",
   "pools": [
     {

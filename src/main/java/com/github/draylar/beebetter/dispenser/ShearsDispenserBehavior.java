@@ -1,7 +1,6 @@
 package com.github.draylar.beebetter.dispenser;
 
 import com.github.draylar.beebetter.block.ModdedBeehiveBlock;
-import com.github.draylar.beebetter.util.BeeState;
 import net.minecraft.block.BeehiveBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,11 +18,12 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class ShearsDispenserBehavior extends FallibleItemDispenserBehavior {
+
     protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
         World world = pointer.getWorld();
         if (!world.isClient()) {
             this.setSuccess(false);
-            BlockPos blockPos = pointer.getBlockPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
+            BlockPos blockPos = pointer.getPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
             List<SheepEntity> list = world.getNonSpectatingEntities(SheepEntity.class, new Box(blockPos));
 
             for (SheepEntity sheepEntity : list) {
@@ -61,7 +61,7 @@ public class ShearsDispenserBehavior extends FallibleItemDispenserBehavior {
                             }
 
                             ModdedBeehiveBlock.dropHoneycomb(world, blockPos);
-                            ((ModdedBeehiveBlock) block).takeHoney(world, blockState, blockPos, null, BeeState.BEE_RELEASED);
+                            ((ModdedBeehiveBlock) block).takeHoney(world, blockState, blockPos, null, BeehiveBlockEntity.BeeState.BEE_RELEASED);
                             this.setSuccess(true);
                         }
                     }

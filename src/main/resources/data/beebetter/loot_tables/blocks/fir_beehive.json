@@ -1,4 +1,7 @@
 {
+  "condition": {
+    "modid": "traverse"
+  },
   "type": "minecraft:block",
   "pools": [
     {

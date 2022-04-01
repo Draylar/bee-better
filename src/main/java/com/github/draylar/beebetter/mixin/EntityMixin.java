@@ -7,7 +7,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.tag.Tag;
+import net.minecraft.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
@@ -26,22 +26,12 @@ import java.util.Random;
 @Mixin(Entity.class)
 public abstract class EntityMixin {
 
-    @Shadow
-    public World world;
-    @Shadow
-    @Final
-    protected Random random;
-    @Shadow
-    private EntityDimensions dimensions;
-
-    @Shadow
-    public abstract double getY();
-
-    @Shadow
-    public abstract double getX();
-
-    @Shadow
-    public abstract double getZ();
+    @Shadow public World world;
+    @Shadow @Final protected Random random;
+    @Shadow private EntityDimensions dimensions;
+    @Shadow public abstract double getY();
+    @Shadow public abstract double getX();
+    @Shadow public abstract double getZ();
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;playSound(Lnet/minecraft/sound/SoundEvent;FF)V"), method = "onSwimmingStart", cancellable = true)
     private void onEnterLiquid(CallbackInfo info) {
@@ -64,7 +54,7 @@ public abstract class EntityMixin {
     }
 
     @Unique
-    private boolean isInFluidTag(Entity entity, Tag<Fluid> tag) {
+    private boolean isInFluidTag(Entity entity, TagKey<Fluid> tag) {
         Box box = entity.getBoundingBox().contract(0.001D);
         int startX = MathHelper.floor(box.minX);
         int endX = MathHelper.ceil(box.maxX);

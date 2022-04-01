@@ -31,7 +31,7 @@ public class FluidResourceLoader implements SimpleSynchronousResourceReloadListe
     }
 
     @Override
-    public void apply(ResourceManager resourceManager) {
+    public void reload(ResourceManager resourceManager) {
         FluidRenderHandler honeyRenderHandler = (blockRenderView, blockPos, fluidState) ->
                 new Sprite[]{
                         MinecraftClient.getInstance().getSpriteAtlas(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE).apply(BeeBetter.id("block/honey_still")),

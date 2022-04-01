@@ -3,14 +3,18 @@
   "package": "com.github.draylar.beebetter.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BeeAccessor",
+    "BeehiveBlockAccessor",
     "BeehiveMixin",
     "BeeMixin",
+    "BlockEntityAccessor",
     "BlockEntityTypeMixin",
     "EntityMixin",
-    "IdentifierMixin",
     "PointOfInterestTypeAccessor",
-    "TotallyOriginalGenerationSettingsMixin"
+    "hive.BeehiveBlockEntityMixin",
+    "hive.BeehiveBlockMixin",
+    "hive.BeeHiveMixin",
+    "hive.HoneyLevelMixin",
+    "state.BlockStateMixin"
   ],
   "injectors": {
     "defaultRequire": 1

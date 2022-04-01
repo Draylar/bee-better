@@ -20,6 +20,7 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	modImplementation include('com.github.Draylar:maybe-data:1.2.1-1.18.2')
 	modImplementation include("com.github.Draylar.omega-config:omega-config-base:${project.omega_config_version}")
 }
 

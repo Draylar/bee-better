@@ -1,4 +1,7 @@
 {
+  "condition": {
+    "modid": "bv"
+  },
   "type": "minecraft:block",
   "pools": [
     {

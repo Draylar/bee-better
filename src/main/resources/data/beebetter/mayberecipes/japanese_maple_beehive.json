@@ -1,0 +1,22 @@
+{
+  "condition": {
+    "modid": "terrestria"
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "HHH",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "terrestria:japanese_maple_planks"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "result": {
+    "item": "beebetter:japanese_maple_beehive"
+  }
+}

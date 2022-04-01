@@ -1,4 +1,7 @@
 {
+  "condition": {
+    "modid": "techreborn"
+  },
   "type": "minecraft:block",
   "pools": [
     {

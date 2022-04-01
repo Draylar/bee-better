@@ -1,0 +1,22 @@
+{
+  "condition": {
+    "modid": "blockus"
+  },
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "HHH",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "blockus:bamboo_planks"
+    },
+    "H": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "result": {
+    "item": "beebetter:bamboo_beehive"
+  }
+}
