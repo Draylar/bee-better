@@ -23,7 +23,9 @@
           "source_entity": {
             "equipment": {
               "mainhand": {
-                "item": "beebetter:bee_stinger"
+                "items": [
+                  "beebetter:bee_stinger"
+                ]
               }
             }
           }
