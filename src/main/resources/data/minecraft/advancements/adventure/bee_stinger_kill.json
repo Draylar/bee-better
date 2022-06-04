@@ -21,7 +21,13 @@
       "conditions": {
         "killing_blow": {
           "source_entity": {
-            "nbt": "{SelectedItem:{id:\"beebetter:bee_stinger\"}}"
+           "equipment": {
+              "mainhand": {
+                "items": [
+                  "beebetter:bee_stinger"
+                ]
+              }
+            }
           }
         }
       }
