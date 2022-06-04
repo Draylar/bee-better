@@ -21,7 +21,7 @@
       "conditions": {
         "killing_blow": {
           "source_entity": {
-           "equipment": {
+            "equipment": {
               "mainhand": {
                 "items": [
                   "beebetter:bee_stinger"
